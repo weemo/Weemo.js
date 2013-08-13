@@ -2,7 +2,7 @@
 
 This is a sample application using WeemoDriver API for thin clients. More information about WeemoDriver API on our Website [http://www.weemo.com/](http://www.weemo.com/)
 
-##Hardware Requierments
+##Hardware Requirements
 
 ###Operating systems:
 Windows XP SP3, 7 and 8
