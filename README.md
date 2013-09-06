@@ -1,6 +1,11 @@
 # WeemoDriver JavaScript API and Sample Application
 
-This is a sample application using WeemoDriver API for thin clients. More information about WeemoDriver API on our Website [http://www.weemo.com/](http://www.weemo.com/)
+You will find in this repository, wiki pages describing how to implement Video Collaboration on your Websites.
+
+- WeemoDriver 4.0 [Proof Of Concept](https://github.com/weemo/JavaScript-API/wiki/JavaScript-API-Proof-of-Concept)
+- [Javascript API Reference](https://github.com/weemo/JavaScript-API/wiki/Javascript-Reference)
+- [Variables Naming rules](https://github.com/weemo/JavaScript-API/wiki/Naming-Rules)
+- [Naming Rules](https://github.com/weemo/JavaScript-API/wiki/Naming-Rules)
 
 ##Hardware Requirements
 
