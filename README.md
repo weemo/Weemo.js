@@ -3,7 +3,7 @@
 
 In this repository, you will find, wiki pages describing how to implement Video Collaboration on your Websites.
 
-- WeemoDriver 4.0 [Proof Of Concept](https://github.com/weemo/JavaScript-API/wiki/JavaScript-API-Proof-of-Concept)
+- [WeemoDriver 4.0 Proof Of Concept](https://github.com/weemo/JavaScript-API/wiki/JavaScript-API-Proof-of-Concept)
 - [Javascript API Reference](https://github.com/weemo/JavaScript-API/wiki/Javascript-Reference)
 - [Variables Naming rules](https://github.com/weemo/JavaScript-API/wiki/Naming-Rules)
 - [Naming Rules](https://github.com/weemo/JavaScript-API/wiki/Naming-Rules)
