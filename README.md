@@ -28,3 +28,6 @@ The Weemo Video Cloud is a solution specifically targeted at application softwar
 Weemo relies on open-standard protocols such as SIP, XMPP and HTTPS. The solution provides constant interoperability with existing or future communication-oriented devices and infrastructures.
 
 Weemo provides both the client technology and integration means and a worldwide cloud infrastructure. These building blocks are designed to work together as one easy-to-use solution. The application vendor, provider of the web application to be integrated with Weemo, will implement JavaScript commands in order to control local clients and, as needed, will have access to REST APIs to perform management tasks including provisioning named users.
+
+
+<img src="http://docs.weemo.com/img/website_shot.png" width="750px" />
