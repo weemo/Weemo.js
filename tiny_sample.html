@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>My Weemo Application</title>
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="https://download.weemo.com/js.php?urlreferer=YOUR_WEB_APP_IDENTIFIER"></script>
+</head>
+<body>
+
+    <script type="text/javascript">
+        // Initializze a object for current call
+        var current_call = null;
+
+        // Initialize the Main Object with WebAppIdentifier, Token, Debug and DisplayName
+        var weemo = new Weemo("YOUR_WEB_APP_IDENTIFIER", "USER_TOKEN", "internal", "", 1,"USER_DISPLAY_NAME");
+        weemo.initialize();
+
+        // Get the Connection Handler callback when the JavaScript is connected to WeempoDriver
+        weemo.onConnectionHandler = function(message, code) {
+            if(window.console)
+                console.log("Connection Handler : " + message + ' ' + code);
+            switch(message) {
+                // Authenticate token and webappId
+                case 'connectedWeemoDriver':
+                    weemo.authenticate();
+                    break; 
+                case 'sipOk':
+                // Create a conference room and report that user is connected
+                    weemo.createCall("conference", "host", "Private Conference Room");
+                    document.getElementById('stat').value = "User authenticate";
+                break;
+            }
+        }
+        // Call Object is created by callback, this function permits to catch events comming from the call object
+        weemo.onCallHandler = function(callObj, args) {
+            current_call = callObj;
+            if (args.type == "call" && args.status == "terminated") {
+                document.getElementById('stat').value = "Call Terminated";
+            }
+        }       
+    </script>
+
+    <input type="text" id="stat" name="debug" maxlength="42"/>
+    <br/>
+    <!-- Send commands to call object -->
+    <button type="button" onclick="current_call.videoStart();"> Show video </button>
+    <button type="button" onclick="current_call.videoStop();"> Stop video </button>
+    <button type="button" onclick="current_call.audioMute();"> Mute </button>
+    <button type="button" onclick="current_call.audioUnMute();"> UnMute </button>
+    <br/>
+    <!-- Hang Up the call -->
+    <button type="button" onclick="current_call.hangup();"> Hang Up </button>
+
+</body>
+</html>
+
+
+
