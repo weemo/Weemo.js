@@ -4,7 +4,9 @@
 In this repository, you will find, wiki pages describing how to implement Video Collaboration on your Websites.
 
 - [WeemoDriver 4.0 Proof Of Concept](https://github.com/weemo/JavaScript-API/wiki/JavaScript-API-Proof-of-Concept)
-- [Javascript API Reference](https://github.com/weemo/JavaScript-API/wiki/Javascript-Reference)
+- [Javascript API Reference](https://github.com/weemo/JavaScript-API/wiki/Javascript-API-Reference)
+- [Javascript API CAllbacks](https://github.com/weemo/JavaScript-API/wiki/Javascript-API-CAllbacks)
+- [Javascript API Error Codes](https://github.com/weemo/JavaScript-API/wiki/Javascript-API-Error-Codes)
 - [Naming Rules](https://github.com/weemo/JavaScript-API/wiki/Naming-Rules)
 
 For a full JavaScript API reference in doxygen documentation format, plese refer to our official documentation website : [http://docs.weemo.com/js/index.html](http://docs.weemo.com/js/index.html)
