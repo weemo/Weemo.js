@@ -5,7 +5,7 @@ In this repository, you will find, wiki pages describing how to implement Video 
 
 - [WeemoDriver 4.0 Proof Of Concept](https://github.com/weemo/JavaScript-API/wiki/JavaScript-API-Proof-of-Concept)
 - [Javascript API Reference](https://github.com/weemo/JavaScript-API/wiki/Javascript-API-Reference)
-- [Javascript API CAllbacks](https://github.com/weemo/JavaScript-API/wiki/Javascript-API-CAllbacks)
+- [Javascript API Callbacks](https://github.com/weemo/JavaScript-API/wiki/Javascript-API-CAllbacks)
 - [Javascript API Error Codes](https://github.com/weemo/JavaScript-API/wiki/Javascript-API-Error-Codes)
 - [Naming Rules](https://github.com/weemo/JavaScript-API/wiki/Naming-Rules)
 
