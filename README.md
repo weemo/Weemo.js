@@ -5,7 +5,6 @@ In this repository, you will find, wiki pages describing how to implement Video 
 
 - [WeemoDriver 4.0 Proof Of Concept](https://github.com/weemo/JavaScript-API/wiki/JavaScript-API-Proof-of-Concept)
 - [Javascript API Reference](https://github.com/weemo/JavaScript-API/wiki/Javascript-Reference)
-- [Variables Naming rules](https://github.com/weemo/JavaScript-API/wiki/Naming-Rules)
 - [Naming Rules](https://github.com/weemo/JavaScript-API/wiki/Naming-Rules)
 
 For a full JavaScript API reference in doxygen documentation format, plese refer to our official documentation website : [http://docs.weemo.com/js/index.html](http://docs.weemo.com/js/index.html)
