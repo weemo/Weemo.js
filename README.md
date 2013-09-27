@@ -8,6 +8,7 @@ In this repository, you will find, wiki pages describing how to implement Video 
 - [Javascript API Callbacks](https://github.com/weemo/JavaScript-API/wiki/Javascript-API-CAllbacks)
 - [Javascript API Error Codes](https://github.com/weemo/JavaScript-API/wiki/Javascript-API-Error-Codes)
 - [Naming Rules](https://github.com/weemo/JavaScript-API/wiki/Naming-Rules)
+- [Upgrading from 3.2 to 4.0](https://github.com/weemo/JavaScript-API/wiki/Upgrade-3.2-to-4.0)
 
 For a full JavaScript API reference in doxygen documentation format, plese refer to our official documentation website : [http://docs.weemo.com/js/index.html](http://docs.weemo.com/js/index.html)
 
