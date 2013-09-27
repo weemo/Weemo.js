@@ -12,19 +12,6 @@ In this repository, you will find, wiki pages describing how to implement Video 
 
 For a full JavaScript API reference in doxygen documentation format, plese refer to our official documentation website : [http://docs.weemo.com/js/index.html](http://docs.weemo.com/js/index.html)
 
-##Hardware Requirements
-
-###Operating systems:
-Windows XP SP3, 7 and 8
-Mac OS 10.6, 10.7 and 10.8
-
-###Compatible browsers:
-Chrome 
-Firefox 
-Safari 5 
-IE8 to IE10 
-
-
 ##About Weemo
 
 <p align="justify">
