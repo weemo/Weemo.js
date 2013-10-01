@@ -13,7 +13,21 @@ In this repository, you will find, wiki pages describing how to implement Video 
 
 For a full JavaScript API reference in doxygen documentation format, plese refer to our official documentation website : [http://docs.weemo.com/js/index.html](http://docs.weemo.com/js/index.html)
 
-##About Weemo
+
+## Supported Platforms
+
+**Operating systems:**<br/>
+- Windows XP SP3, 7 and 8<br/>
+- Mac OS 10.6, 10.7 and 10.8.<br/>
+
+**Compatible browsers:**<br/>
+- Chrome <br/>
+- Firefox <br/> 
+- Safari 5 <br/>
+- IE8 to IE10 <br/> 
+
+
+## About Weemo
 
 <p align="justify">
 The Weemo Video Cloud is a solution specifically targeted at application software vendors providing real-time video communications embedded within any web or mobile application. The solution is particularly well suited for social software applications such as Enterprise Social Networks, Social CRM, HCM, Customer Service, Education and E-learning, as well as for Contact Management and Collaboration.
