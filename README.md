@@ -17,15 +17,15 @@ For a full JavaScript API reference in doxygen documentation format, plese refer
 ## Hardware Requirements
 
 ### Operating systems:
-Windows XP SP3, 7 and 8<br/>
-Mac OS 10.6, 10.7 and 10.8
+* Windows XP SP3, 7 and 8<br/>
+* Mac OS 10.6, 10.7 and 10.8
 
 
 ### Compatible browsers:
-Chrome <br/>
-Firefox <br/>
-Safari 5 <br/>
-IE8 to IE10
+* Chrome <br/>
+* Firefox <br/>
+* Safari 5 <br/>
+* IE8 to IE10
 
 
 ## About Weemo
