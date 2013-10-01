@@ -4,6 +4,7 @@
 In this repository, you will find, wiki pages describing how to implement Video Collaboration on your Websites.
 
 - [Javascript API Quick Start](https://github.com/weemo/Release-4.0/wiki/Javascript-API---Quick-start)
+- [Javascript API Integration](https://github.com/weemo/Release-4.0/wiki/Javascript-API-Integration)
 - [Javascript API Reference](https://github.com/weemo/JavaScript-API/wiki/Javascript-API-Reference)
 - [Javascript API Callbacks](https://github.com/weemo/JavaScript-API/wiki/Javascript-API-CAllbacks)
 - [Javascript API Error Codes](https://github.com/weemo/JavaScript-API/wiki/Javascript-API-Error-Codes)
