@@ -14,7 +14,7 @@ In this repository, you will find, wiki pages describing how to implement Video 
 For a full JavaScript API reference in doxygen documentation format, plese refer to our official documentation website : [http://docs.weemo.com/js/index.html](http://docs.weemo.com/js/index.html)
 
 
-##H ardware Requirements
+## Hardware Requirements
 
 ### Operating systems:
 Windows XP SP3, 7 and 8
