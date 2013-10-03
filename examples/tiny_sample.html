@@ -28,11 +28,15 @@
                 // Authenticate token and webappId
                 case 'connectedWeemoDriver':
                     weemo.authenticate();
-                    break; 
+                break; 
                 case 'sipOk':
                 // Create a conference room and report that user is connected
                     weemo.createCall("conference", "host", "Private Conference Room");
                     document.getElementById('stat').value = "User authenticate";
+                break;
+                case 'loggedasotheruser':
+                // force connection, kick other logged users
+                    weemo.authenticate(1);
                 break;
             }
         }
