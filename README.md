@@ -1,7 +1,7 @@
 # Weemo JavaScript API
 
 
-In this repository, you will find, wiki pages describing how to implement Weemo Video.
+In this repository, you will find, wiki pages describing how to implement Weemo Video in web applications.
 
 - [Javascript API Quick Start](https://github.com/weemo/Release-4.0/wiki/Javascript-API---Quick-start)
 - [Javascript API Integration](https://github.com/weemo/Release-4.0/wiki/Javascript-API-Integration)
