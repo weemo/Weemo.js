@@ -1,4 +1,4 @@
-# WeemoDriver JavaScript API
+# Weemo JavaScript API
 
 
 In this repository, you will find, wiki pages describing how to implement Weemo Video.
