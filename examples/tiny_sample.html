@@ -15,6 +15,10 @@
         // Initialize the Main Object with WebAppIdentifier, Token, Debug and DisplayName
         var weemo = new Weemo("YOUR_WEB_APP_IDENTIFIER", "USER_TOKEN", "internal", "", 1,"USER_DISPLAY_NAME");
         weemo.initialize();
+        
+        weemo.onWeemoDriverNotStarted = function(downloadUrl) {
+		    alert('WeemoDriver not detected, copy and paste this following url on your browser: '+downloadUrl);
+	    };
 
         // Get the Connection Handler callback when the JavaScript is connected to WeempoDriver
         weemo.onConnectionHandler = function(message, code) {
