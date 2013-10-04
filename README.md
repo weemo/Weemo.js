@@ -8,7 +8,7 @@ In this repository, you will find, wiki pages describing how to implement Weemo 
 - [Javascript API Reference](https://github.com/weemo/JavaScript-API/wiki/Javascript-API-Reference)
 - [Javascript API Callbacks](https://github.com/weemo/JavaScript-API/wiki/Javascript-API-CAllbacks)
 - [Javascript API Error Codes](https://github.com/weemo/JavaScript-API/wiki/Javascript-API-Error-Codes)
-- [Javascript API Defintions](https://github.com/weemo/JavaScript-API/wiki/Naming-Rules)
+- [Javascript API Defintions](https://github.com/weemo/Release-4.0/wiki/WeemoDriver-Definitions)
 - [Upgrading from 3.2 to 4.0](https://github.com/weemo/JavaScript-API/wiki/Upgrade-3.2-to-4.0)
 
 For a full JavaScript API reference plese refer to our official documentation website : [http://docs.weemo.com/js/index.html](http://docs.weemo.com/js/index.html)
