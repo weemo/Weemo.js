@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>My Weemo Application</title>
     <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="https://download.weemo.com/js.php?urlreferer=YOUR_WEB_APP_IDENTIFIER"></script>
+    <script type="text/javascript" src="https://download.weemo.com/js/webappid/YOUR_WEB_APP_IDENTIFIER"></script>
 </head>
 <body>
 
@@ -13,8 +13,10 @@
         var current_call = null;
 
         // Initialize the Main Object with WebAppIdentifier, Token, Debug and DisplayName
-        var weemo = new Weemo("YOUR_WEB_APP_IDENTIFIER", "USER_TOKEN", "internal", "", 1,"USER_DISPLAY_NAME");
+        var weemo = new Weemo("YOUR_WEB_APP_IDENTIFIER", "USER_TOKEN", "internal");
         weemo.initialize();
+        // Set this method to 1 if you want use the javascript console log
+        weemo.setDebugLevel(1);
         
         weemo.onWeemoDriverNotStarted = function(downloadUrl) {
 		    alert('WeemoDriver not detected, copy and paste this following url on your browser: '+downloadUrl);
@@ -30,8 +32,9 @@
                     weemo.authenticate();
                 break; 
                 case 'sipOk':
+                    weemo.setDisplayName("My_Displayname")
                 // Create a conference room and report that user is connected
-                    weemo.createCall("conference", "host", "Private Conference Room");
+                    weemo.createCall("Callee_UID", "internal", "Callee_Displayname");
                     document.getElementById('stat').value = "User authenticate";
                 break;
                 case 'loggedasotheruser':
