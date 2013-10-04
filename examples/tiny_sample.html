@@ -34,7 +34,7 @@
                 case 'sipOk':
                     weemo.setDisplayName("My_Displayname")
                 // Create a conference room and report that user is connected
-                    weemo.createCall("Callee_UID", "internal", "Callee_Displayname");
+                    weemo.createCall("callee-uid", "internal", "Callee_Displayname");
                     document.getElementById('stat').value = "User authenticate";
                 break;
                 case 'loggedasotheruser':
