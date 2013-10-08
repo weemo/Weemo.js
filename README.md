@@ -14,7 +14,8 @@ For a full JavaScript API reference plese refer to our official documentation we
 ## Hardware Requirements
 
 ### Operating systems:
-* Windows XP SP3, 7 and 8<br/>
+* Windows XP SP3 <br/>
+* Windows 7 and 8<br/>
 * Mac OS 10.6, 10.7 and 10.8
 
 
