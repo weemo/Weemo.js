@@ -74,7 +74,6 @@ var Modal = function(html) {
 	    overlay.style.width = pageWidth+'px';
 	    overlay.style.zIndex = '1000';
 	    overlay.style.filter = 'alpha(opacity = 60)';
-	    //overlay.style.-ms-filter = 'alpha(opacity = 60)';
 	    
 	    var modalBox = document.getElementById('weemo_modal_box');
 	    modalBox.style.backgroundClip = 'padding-box';
