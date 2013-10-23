@@ -1,160 +1,157 @@
-(function (window, html, body) {
-    if (!window.innerWidth) Object.defineProperty(window, 'innerWidth', {
-        get: function () { return html.clientWidth }
-    });
-
-    if (!window.innerHeight) Object.defineProperty(window, 'innerHeight', {
-        get: function () { return html.clientHeight }
-    });
-
-
-    if (!document.width) Object.defineProperty(document, 'width', {
-        get: function () { return Math.max(html.clientWidth, html.scrollWidth, body.scrollWidth) }
-    });
-
-    if (!document.height) Object.defineProperty(document, 'height', {
-        get: function () { return Math.max(html.clientHeight, html.scrollHeight, body.scrollHeight) }
-    });
-
-
-    if (!window.scrollY) Object.defineProperty(window, 'scrollY', {
-        get: function () { return html.scrollTop || body.scrollTop }
-    });
-
-    if (!window.scrollX) Object.defineProperty(window, 'scrollX', {
-        get: function () { return html.scrollLeft || body.scrollLeft }
-    });
-}(this, document.documentElement, document.body));
-
-var Modal = function(html) {
+var Modal = function(downloadUrl) {
     var self = this;
 
     this.options = {
         height : "210",
-        width : "400",
-        html: html,
+        width : "430",
+        downloadUrl: downloadUrl,
         top: "center",
         left: "center"
     };
+
+    var overlay= function() {
+    var el = $('<div class="weemo_overlay"></div>');
+        $(el).appendTo('body');
+    };
+
     var defaultStyles = function() {
-    	var browser; 
-    	var browserVersion;
-    	
-    	if (navigator.userAgent.search("MSIE") >= 0){
-		    browser = 'Explorer';
-		    var position = navigator.userAgent.search("MSIE") + 5;
-		    var end = navigator.userAgent.search("; Windows");
-		    browserVersion = parseInt(navigator.userAgent.substring(position,end));
-		}
-    	
-	    var pageHeight = window.innerHeight;
-	    var pageWidth = window.innerWidth;
-	
-	    if(self.options.top == "center") {
-	        self.options.top = (pageHeight / 2) - (self.options.height/2);
-	    }
-	
-	    if(self.options.left == "center") {
-	        self.options.left = (pageWidth / 2) - (self.options.width/2);
-	    }
-	    
-	    
-	    var overlay = document.getElementById('weemo_overlay');
-	    overlay.style.position = 'fixed';
-	    overlay.style.top = '0';
-	    overlay.style.left = '0';
-	    
-	    if(browser != undefined && browserVersion <= 8) {
-	    	overlay.style.backgroundColor = 'rgb(0,0,0)';
-	    } else {
-	    	overlay.style.backgroundColor = 'rgba(0,0,0,0.6)';
-	    }
-	    
-	    overlay.style.height = pageHeight+'px';
-	    overlay.style.width = pageWidth+'px';
-	    overlay.style.zIndex = '1000';
-	    overlay.style.filter = 'alpha(opacity = 60)';
-	    
-	    var modalBox = document.getElementById('weemo_modal_box');
-	    modalBox.style.backgroundClip = 'padding-box';
-	    modalBox.style.backgroundColor = '#FFFFFF';
-	    
-	    if(browser != undefined && browserVersion <= 8) {
-	    	modalBox.style.border = '1px solid rgb(0, 0, 0)';
-	    	modalBox.style.boxShadow = '0 3px 7px rgb(0, 0, 0)';
-	    } else {
-	    	modalBox.style.border = '1px solid rgba(0, 0, 0, 0.3)';
-	    	modalBox.style.boxShadow = '0 3px 7px rgba(0, 0, 0, 0.3)';
-	    }
-	    
-	    modalBox.style.borderRadius = '6px 6px 6px 6px';
-	    modalBox.style.outline = 'medium none';
-	    modalBox.style.zIndex = '1050';
-	    modalBox.style.position = 'fixed';
-	    modalBox.style.left = self.options.left+'px';
-	    modalBox.style.top = self.options.top+'px';
-	    modalBox.style.display = 'none';
-	    modalBox.style.height = 'auto';
-	    modalBox.style.width = self.options.width + 'px';
-	
-	  
-	    var closeBtn = document.getElementById('weemo_modal_close');
-	    closeBtn.style.background = '#FFF';
-	    closeBtn.style.fontFamily = '\"Helvetica Neue\",Helvetica,Arial,sans-serif';
-	    closeBtn.style.color = '#000000';
-	    closeBtn.style.float = 'right';
-	    closeBtn.style.fontSize = '20px';
-	    closeBtn.style.fontWeight = 'bold';
-	    closeBtn.style.lineHeight = '20px';
-	    closeBtn.style.opacity = '0.2';
-	    closeBtn.style.textShadow = '0 1px 0 #FFFFFF';
-	    closeBtn.style.marginTop = '2px';
-	    closeBtn.style.border = '0 none';
-	    closeBtn.style.padding = '0';
-	    closeBtn.style.textDecoration = 'none';
-	    
-	    var title = document.getElementById('weemo_modal_header_title');
-	    title.style.fontSize = '23px';
-	    title.style.textAlign = 'left';
-	    
-	    var header = document.getElementById('weemo_modal_header');
-	    header.style.borderBottom = '1px solid #EEEEEE';
-	    header.style.padding = '9px 15px';
-	    header.style.color = '#333333';
-	    header.style.fontFamily = '\"Helvetica Neue\",Helvetica,Arial,sans-serif';
-	    header.style.lineHeight = '20px';
-	    
-	    var inner = document.getElementById('weemo_inner_modal_box');
-	    inner.style.padding = '15px';
-	    inner.style.position = 'relative';
-	    inner.style.backgroundColor = '#fff';
-	    inner.style.color ='#333';
-	    inner.style.fontFamily = '\"Helvetica Neue\",Helvetica,Arial,sans-serif';
-	    inner.style.fontSize = '15px';
-	    inner.style.lineHeight = '20px';
-	    inner.style.textAlign = 'left';
-	};
+        var pageHeight = $(window).height();
+        var pageWidth = $(window).width();
+
+        if(self.options.top == "center") {
+            self.options.top = (pageHeight / 2) - (self.options.height/2);
+        }
+
+        if(self.options.left == "center") {
+            self.options.left = (pageWidth / 2) - (self.options.width/2);
+        }
+
+        $('.weemo_overlay').css({
+            'position':'absolute',
+            'top':'0',
+            'left':'0',
+            'background-color':'rgba(0,0,0,0.6)',
+            'height':pageHeight,
+            'width':pageWidth,
+            'z-index':'9999999',
+            'filter':'alpha(opacity = 60)',
+            '-ms-filter':'alpha(opacity = 60)'
+        });
+
+        $('.weemo_modal_box').css({
+            'background-clip': 'padding-box',
+            'background-color': '#FFFFFF',
+            'border': '1px solid rgba(0, 0, 0, 0.3)',
+            'border-radius': '6px 6px 6px 6px',
+            'box-shadow': '0 3px 7px rgba(0, 0, 0, 0.3)',
+            'outline': 'medium none',
+            'z-index': '1050',
+            'position':'absolute',
+            'left':self.options.left,
+            'top':self.options.top,
+            'display':'none',
+            'height': 'auto',
+            'width': self.options.width + 'px'
+        });
+        $('.weemo_modal_close').css({
+            'background':'#FFF',
+            'font-family': '\"Helvetica Neue\",Helvetica,Arial,sans-serif',
+            'color': '#000000',
+            'float': 'right',
+            'font-size': '20px',
+            'font-weight': 'bold',
+            'line-height': '20px',
+            'opacity': '0.2',
+            'text-shadow': '0 1px 0 #FFFFFF',
+            'margin-top': '2px',
+            'border': '0 none',
+            'padding': '0',
+            'text-decoration':'none'
+        });
+        $('.weemo_modal_header_title').css({
+            'font-size' :'23px',
+            'text-align':'left'
+        });
+        $('.weemo_modal_header').css({
+            'border-bottom': '1px solid #EEEEEE',
+            'padding': '9px 15px',
+            'color': '#333333',
+            'font-family': '\"Helvetica Neue\",Helvetica,Arial,sans-serif'
+        });
+        $('.weemo_inner_modal_box').css({
+            'padding': '15px',
+            'position': 'relative',
+            'background-color':'#fff',
+            'color': '#333333',
+            'font-family': '\"Helvetica Neue\",Helvetica,Arial,sans-serif',
+            'font-size': '14px',
+            'line-height': '20px',
+            'text-align': 'center',
+            'margin': '0 15px'
+        });
+        $('.weemo_download_button').css({
+            'text-align':'center'
+        });
+        $('.weemo_download_button_link').css({
+            '-moz-border-bottom-colors': 'none',
+            '-moz-border-left-colors': 'none',
+            '-moz-border-right-colors': 'none',
+            '-moz-border-top-colors': 'none',
+            'background-color': '#F5F5F5',
+            'background-image': 'linear-gradient(to bottom, #FFFFFF, #E6E6E6)',
+            'background-repeat': 'repeat-x',
+            'border-color': 'rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #B3B3B3',
+            'border-image': 'none',
+            'border-radius': '4px 4px 4px 4px',
+            'border-style': 'solid',
+            'border-width': '1px',
+            'box-shadow': '0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05)',
+            'color': '#333333',
+            'cursor': 'pointer',
+            'display': 'inline-block',
+            'font-size': '14px',
+            'line-height': '20px',
+            'margin-bottom': '0',
+            'padding': '4px 12px',
+            'text-align': 'center',
+            'text-shadow': '0 1px 1px rgba(255, 255, 255, 0.75)',
+            'vertical-align': 'middle',
+            'text-decoration': 'none'
+        });
+        $('.weemo_footer').css({
+            'background-color': '#F5F5F5',
+            'border-radius': '0 0 6px 6px',
+            'border-top': '1px solid #DDDDDD',
+            'box-shadow': '0 1px 0 #FFFFFF inset',
+            'margin-bottom': '0',
+            'padding': '15px',
+            'text-align': 'center',
+            'height':'45px'
+        });
+        $('.btnClose').css({
+            'margin-left':'30px'
+        });
+    };
 
 
-	var weemo_box = function() {
-        var weemoModalClose = document.getElementById('weemo_modal_close');
-        var btnClose = document.getElementById('btnClose');
-        weemoModalClose.onclick = function() {
-        	document.getElementById('weemo_overlay').style.display = 'none';
-        	document.getElementById('weemo_modal_box').style.display = 'none';
-        };
+    var weemo_box = function() {
+        var box = $('<div class="weemo_modal_box"><div class="weemo_modal_header"><h3 class="weemo_modal_header_title">Weemo Driver Download</h3></div><div class="weemo_inner_modal_box"><p>WeemoDriver does not respond, please click to download and install the latest version.</p><br/><div style="text-align:center;""><div class="weemo_download_button"><a class="weemo_download_button_link btnDownload" href="'+ self.options.downloadUrl+'" >Download</a><a href="#" class="weemo_download_button_link btnClose">Cancel</a></div></div></div><div class="weemo_footer">This software contains open source libraries, a complete list of these and their associated licenses are available <a target="_blank" href="http://weemo.com/licenses">here</a>.</div></div>');
+        $(box).appendTo('.weemo_overlay');
+        $('.weemo_modal_close, .btnClose').click(function(){
+            $(this).parent().fadeOut().remove();
+            $('.weemo_overlay').fadeOut().remove();
+        });
     };
 
     this.show = function() {
+        overlay();
         weemo_box();
         defaultStyles();
-        
-        document.getElementById('weemo_overlay').style.display = 'block';
-        document.getElementById('weemo_modal_box').style.display = 'block';
+        $('.weemo_modal_box').fadeIn(500);
     };
 
     this.close = function() {
-    	document.getElementById('weemo_overlay').style.display = 'none';
-        document.getElementById('weemo_modal_box').style.display = 'none';
+        $('.weemo_modal_close, .btnClose').parent().fadeOut().remove();
+        $('.weemo_overlay').fadeOut().remove();
     };
 };
