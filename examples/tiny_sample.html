@@ -16,10 +16,10 @@
 /* Quick-Start: Step 4 */ 
         // Initialize the Main Object with WebAppIdentifier, Token, Debug and DisplayName
         var weemo = new Weemo("YOUR_WEB_APP_IDENTIFIER", "USER_TOKEN", "internal");
+ // Set this method to 1 if you want use the javascript console log
+        weemo.setDebugLevel(1);
 /* Quick-Start: Step 5 */ 
         weemo.initialize();
-        // Set this method to 1 if you want use the javascript console log
-        weemo.setDebugLevel(1);
 /* Quick-Start: Step 6 */ 
         weemo.onWeemoDriverNotStarted = function(downloadUrl) {
 		    alert('WeemoDriver not detected, copy and paste this following url on your browser: '+downloadUrl);
