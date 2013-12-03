@@ -15,7 +15,7 @@
 /* Quick-Start: Step 4 */ 
         // Initialize the Main Object with WebAppIdentifier, Token, Debug and DisplayName
 
-        var weemo = new Weemo("YOUR_APP_ID", "invitee", "internal");
+        var weemo = new Weemo("YOUR_APP_ID", "YOUR_UID", "internal");
 /* Quick-Start: Step 5 */ 
         weemo.initialize();
         // Set this method to 1 if you want use the javascript console log
@@ -37,11 +37,11 @@
                 break; 
                 case 'sipOk':
 /* Quick-Start: Step 8-1 */                          
-                    weemo.setDisplayName("invitee");
+                    weemo.setDisplayName("YOUR_DISPLAY_NAME");
 /* Quick-Start: Step 8 */  
                 // Join a conference room and report that user is connected
-                    weemo.createCall("conference", "attendee", "invitee");
-                    document.getElementById('stat').value = "User authenticate";
+                    weemo.createCall("HOST_UID", "attendee", "YOUR_DISPLAY_NAME");
+                    document.getElementById('stat').value = "User Authenticated";
                 break;
                 case 'loggedasotheruser':
                 // force connection, kick other logged users
@@ -69,7 +69,7 @@
     <!-- Hang Up the call -->
     <button type="button" onclick="current_call.hangup();"> Hang Up </button>
     <!-- Re-join -->
-    <button type="button" onclick=" weemo.createCall('conference', 'attendee', 'invitee14');"> Join again </button>
+    <button type="button" onclick=" weemo.createCall('HOST_UID', 'attendee', 'YOUR_DISPLAY_NAME');"> Join again </button>
 
 
 </body>
