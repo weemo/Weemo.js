@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <title>My Weemo Application</title>
 <!-- Quick-Start: Step 3 -->
-    <script type="text/javascript" src="https://download.weemo.com/js/webappid/YOUR_APP_ID"></script>
+    <script type="text/javascript" src="https://download.weemo.com/js/webappid/WEB_APP_ID"></script>
 </head>
 <body>
 
@@ -14,7 +15,7 @@
 /* Quick-Start: Step 4 */ 
         // Initialize the Main Object with WebAppIdentifier, Token, Debug and DisplayName
 
-        var weemo = new Weemo("YOUR_APP_ID", "YOUR_UID", "internal");
+        var weemo = new Weemo("WEB_APP_ID", "YOUR_UID", "internal");
 /* Quick-Start: Step 5 */ 
         weemo.initialize();
         // Set this method to 1 if you want use the javascript console log
@@ -40,7 +41,7 @@
 /* Quick-Start: Step 8 */  
                 // Create a conference room and report that user is connected
                     weemo.createCall("YOUR_UID", "host", "YOUR_DISPLAY_NAME");
-                    document.getElementById('stat').value = "User Authenticated";
+                    document.getElementById('status').innerHTML = "User Authenticated";
                 break;
                 case 'loggedasotheruser':
                 // force connection, kick other logged users
@@ -52,12 +53,20 @@
         weemo.onCallHandler = function(callObj, args) {
             current_call = callObj;
             if (args.type == "call" && args.status == "terminated") {
-                document.getElementById('stat').value = "Call Terminated";
+                document.getElementById('status').innerHTML = "Call Terminated";
+            } else if (args.type == "call" && args.status == "proceeding") {
+                document.getElementById('status').innerHTML = "Call in Progress";
+            } else if (args.type == "call" && args.status == "active") {
+                document.getElementById('status').innerHTML = "Call Active";
             }
+
         }       
     </script>
 
-    <input type="text" id="stat" name="debug" maxlength="42"/>
+    <div id="status" name="status">
+        Not Connected
+    </div>
+    
     <br/>
     <!-- Send commands to call object -->
     <button type="button" onclick="current_call.videoStart();"> Show video </button>
@@ -68,7 +77,7 @@
     <!-- Hang Up the call -->
     <button type="button" onclick="current_call.hangup();"> Hang Up </button>
     <!-- Host Again -->
-    <button type="button" onclick=" weemo.createCall('YOUR_UID', 'host', 'YOUR_DISPLAY_NAME');"> Join again </button>
+    <button type="button" onclick=" weemo.createCall('YOUR_UID', 'host', 'YOUR_DISPLAY_NAME');"> Host again </button>
 
 
 </body>
