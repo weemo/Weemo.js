@@ -14,7 +14,7 @@
 /* Quick-Start: Step 4 */ 
         // Initialize the Main Object with WebAppIdentifier, Token, Debug and DisplayName
 
-        var weemo = new Weemo("YOUR_APP_ID", "conference", "internal");
+        var weemo = new Weemo("YOUR_APP_ID", "YOUR_UID", "internal");
 /* Quick-Start: Step 5 */ 
         weemo.initialize();
         // Set this method to 1 if you want use the javascript console log
@@ -36,11 +36,11 @@
                 break; 
                 case 'sipOk':
 /* Quick-Start: Step 8-1 */                          
-                    weemo.setDisplayName("My Conf Name")
+                    weemo.setDisplayName("YOUR_DISPLAY_NAME")
 /* Quick-Start: Step 8 */  
                 // Create a conference room and report that user is connected
-                    weemo.createCall("conference", "host", "My Conf Name");
-                    document.getElementById('stat').value = "User authenticate";
+                    weemo.createCall("YOUR_UID", "host", "YOUR_DISPLAY_NAME");
+                    document.getElementById('stat').value = "User authenticated";
                 break;
                 case 'loggedasotheruser':
                 // force connection, kick other logged users
