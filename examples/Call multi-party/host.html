@@ -1,0 +1,68 @@
+<!-- This file is used by the Host, used name is host_uid -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>My Weemo Application: Host</title>
+<!-- Quick-Start: Step 3 -->
+    <script type="text/javascript" src="https://download.weemo.com/js/webappid/YOUR_WEB_APP_IDENTIFIER"></script>
+<style type="text/css">
+    body{
+        font-family: Helvetica;
+    }
+</style>
+</head>
+<body>
+
+    <script type="text/javascript">
+/* Quick-Start: Step 4 */ 
+        // Initialize the Main Object with WebAppIdentifier, Token, DisplayName
+        var weemo = new Weemo("YOUR_WEB_APP_IDENTIFIER", "host_uid", "internal", "", "1", "Host");
+/* Quick-Start: Step 5 */ 
+        weemo.initialize();
+/* Quick-Start: Step 6 */ 
+        weemo.onWeemoDriverNotStarted = function(downloadUrl) {
+                    alert('WeemoDriver not detected, copy and paste this following url on your browser: '+downloadUrl);
+            };
+
+        // Get the Connection Handler callback when the JavaScript is connected to WeempoDriver
+        weemo.onConnectionHandler = function(message, code) {
+            if(window.console)
+                console.log("Connection Handler : " + message + ' ' + code);
+            switch(message) {
+/* Quick-Start: Step 7 */      
+                // Authenticate token and webappId
+                case 'connectedWeemoDriver':
+                    weemo.authenticate();
+                break; 
+                case 'sipOk':
+                    document.getElementById('connecting').style.color = "#CCCCCC";
+                    document.getElementById('stat').innerHTML = "Connected as Host using WeemoDriver";
+                    document.getElementById('buttonCall').style.display = "block";
+                break;
+                case 'loggedasotheruser':
+                // force connection, kick other logged users
+                    weemo.authenticate(1);
+                break;
+            }
+        }
+        // Call Object is created by callback, this function permits to catch events comming from the call object
+        weemo.onCallHandler = function(callObj, args) {
+            if (args.type == "call" && args.status == "terminated") {
+                document.getElementById('call').innerHTML = "";
+            } else if (args.type == "call" && args.status == "proceeding") {
+                document.getElementById('call').innerHTML = "Create Conference call...";
+            } else if (args.type == "call" && args.status == "active") {
+                document.getElementById('call').innerHTML = "";
+            } 
+
+        }       
+    </script>
+    <h3>Welcome to Weemo HelloWorld App<h3/>
+    <h4 id="connecting">Connecting as Host...</h4>
+    <h4 id="stat"><h4/>
+    <button style="display:none;" id="buttonCall" onclick="weemo.createCall('host_uid', 'host', 'Host');">Click to Host a video conference</button>
+    <h4 id="call"><h4/>
+
+</body>
+</html>
