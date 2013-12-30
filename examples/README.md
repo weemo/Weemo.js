@@ -3,10 +3,9 @@
 You can find here some samples to how-to make calls with WeemoDriver 4.x
 
 - <a href="https://github.com/weemo/Release-4.x/blob/WeemoDriver/examples/tiny_sample.html">timy_sample.html</a>: This file was created to support our <a href="https://github.com/weemo/Release-4.x/wiki/Javascript-API---Quick-start">Quick Start tutorial</a>. It connects you as <font color="#995555">"user_id"</font> UID and launches a call as a host of a conference.<br>
-- <a href="https://github.com/weemo/Release-4.x/blob/WeemoDriver/examples/callee.html">callee.html</a>: This sample connects a user <font color="#995555">"source_uid"</font> who is calling after authentication <font color="#995555">"destination_uid"</font> user.<br>
-- <a href="https://github.com/weemo/Release-4.x/blob/WeemoDriver/examples/caller.html">caller.html</a>: This sample connects a user as <font color="#995555">"destination_uid"</font> UID who is waiting for a call.<br/> 
-- <a href="https://github.com/weemo/Release-4.x/blob/WeemoDriver/examples/hostconference.html">hostconference.html</a> This sample connects you as UID you have chosen and launch a conference as host.
 
+- 1 to 1 Call: In this folder you will find two files, first one for the caller, the second one for callee.<br/>
+- Call Multy-party: Contains 1 hmlt file to connect the host of the conference and two other files to connect attendees. <br/>
 
 All those files must be edited with yours:
 
