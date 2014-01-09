@@ -16,7 +16,7 @@ For a full JavaScript API reference plese refer to our official documentation we
 ### Operating systems:
 * Windows XP SP3 <br/>
 * Windows 7 and 8<br/>
-* Mac OS 10.6, 10.7 and 10.8
+* Mac OS 10.6 to 10.9
 
 
 ### Compatible browsers:
