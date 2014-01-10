@@ -4,14 +4,14 @@ Weemo provide the functionality to invite external users of your domain, this sa
 
 ### Requirements 
 
-This sample uses Weemo Authentification Client, to run this sample on your Web server you need:
+This sample uses Weemo Authentication Client, to run this sample on your Web server you need:
 
 - Auth API Client_id
 - Auth API Client_secret
 - Auth API client.p12 certificate file and his passphrase
-- weemo-ca.pem autority file 
+- weemo-ca.pem authority file 
 
-You should known a minimal Provider configuration informations:
+You should known a minimal Provider configuration information:
 
 - Application Identifier
 - Weemo Auth Client URL (needed to redirect the Weemo.js to the Auth Client; here it's auth.php), if you don't know how to configure it, send a request to Weemo
@@ -50,7 +50,7 @@ Weemo_Client.php
 ```
 
 #### Step 2 - Edit Weemo Authentication Client
-Edit auth.php file to enter your Weemo Authentication credentials, your domain and profile identifers:
+Edit auth.php file to enter your Weemo Authentication credentials, your domain and profile identifiers:
 
 Fill credentials values:
 
@@ -127,7 +127,7 @@ Now you are ready to send generated invitation link to your external invitees.
 
 ### Conclusion
 
-We hope you have learned in this exercices following basic Weemo knowledge:
+We hope you have learned in this exercises following basic Weemo knowledge:
 
 - Provider information (domain and profile)
 - Weemo Auth usage (Client Auth URL)
