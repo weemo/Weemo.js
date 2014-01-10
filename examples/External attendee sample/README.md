@@ -107,6 +107,9 @@ http://192.168.0.28/weemodriver4.0/hostconference.php?hostuid=myemail@weemo.com
 
 >Enter the hostuid with a minimum of 6 characters. 
 
+<img src="http://docs.weemo.com/img/ext_attendee_1.png" />
+
+
 #### Step 4 - Edit Attendee Page
 
 Edit joinexternal.html file to enter your Application identifier:
@@ -124,6 +127,7 @@ $DEBUG = "1";
 
 Now you are ready to send generated invitation link to your external invitees.
 
+<img src="http://docs.weemo.com/img/ext_attendee_2.png" />
 
 ### Conclusion
 
