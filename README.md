@@ -8,8 +8,9 @@ In this repository, you will find, wiki pages describing how to implement Weemo 
 - [Javascript API Naming Rules](https://github.com/weemo/Release-4.0/wiki/WeemoDriver-Naming)
 - [Upgrading from 3.2 to 4.x](https://github.com/weemo/JavaScript-API/wiki/Upgrade-3.2-to-4.0)
 
-For a full JavaScript API reference plese refer to our official documentation website : [http://docs.weemo.com/js/index.html](http://docs.weemo.com/js/index.html)
+For a full JavaScript API reference please refer to our official documentation website: [http://docs.weemo.com/js/index.html](http://docs.weemo.com/js/index.html)
 
+The release notes and change log can be found at [http://docs.weemo.com/releasenotes](http://docs.weemo.com/releasenotes)
 
 ## Hardware Requirements
 
