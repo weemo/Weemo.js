@@ -36,7 +36,7 @@ Sample files:
 ### Installation
 
 #### Step 1 - Copy sample files
-Copy all sample files into the same directory of your Web Server, check if all file have set the good rights on copied files.
+Copy all sample files into the same directory of your Web Server, check if all the files are set with the good rights.
 
 Copy your client.p12 and weemo-ca.pem certificate files into the same directory, at the end you must have this directory file list:
 
@@ -66,7 +66,7 @@ $AUTH_SERVER_URL = "https://oauths-ppr.weemo.com/auth/";
 * For staging plartfom the server auth URL is: 'https://oauths-ppr.weemo.com/auth/'  
 * For production platform use: https://oauths.weemo.com/auth/
 
-> See with weemo support if you have a doubt about the platform your are using.
+> See with Weemo support if you have a doubt about the platform your are using.
 
 Fill Domain and Profile values:
 
@@ -131,16 +131,16 @@ Now you are ready to send generated invitation link to your external invitees.
 
 ### Conclusion
 
-We hope you have learned in this exercises following basic Weemo knowledge:
+We hope you have learned in this exercise the following basic Weemo knowledge:
 
 - Provider information (domain and profile)
 - Weemo Auth usage (Client Auth URL)
 - Weemo platform change (ppr)
-- How to a generate a link for external attendee
-- How you have to call Weemo Object for an external user
+- How to generate a link for external attendee
+- How to call Weemo Object for an external user
 - How to use createCall method to call your conference room, and to join an external attendee to your conference
 
-More related documentation is available here: 
+More related documentations are available here: 
 
 Weemo JS API reference: <a href="http://docs.weemo.com/release/4.2/interface_weemo.html">http://docs.weemo.com/release/4.2/interface_weemo.html</a><br/>
 Weemo Auth API wiki: <a href="https://github.com/weemo/Auth-API/wiki/Weemo-Auth-API">https://github.com/weemo/Auth-API/wiki/Weemo-Auth-API</a><br/>
