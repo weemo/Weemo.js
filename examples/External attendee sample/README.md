@@ -11,7 +11,7 @@ This sample uses Weemo Authentication Client, to run this sample on your Web ser
 - Auth API client.p12 certificate file and his passphrase
 - weemo-ca.pem authority file 
 
-You should known a minimal Provider configuration information:
+You should know a minimal Provider configuration information:
 
 - Application Identifier
 - Weemo Auth Client URL (needed to redirect the Weemo.js to the Auth Client; here it's auth.php), if you don't know how to configure it, send a request to Weemo
