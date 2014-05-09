@@ -1,17 +1,17 @@
-# API Naming Rules
+# Naming Rules
 
 ## Contents
 
-* [Application Identifier](naming.md#wiki-application-identifier)
-* [Uid](naming.md#uid)
-* [Token](naming.md#token)
-* [Display Name](naming.md#display-name)
+* [Web Application Identifier](#web-application-identifier)
+* [Token](#token)
+* [Uid](#uid)
+* [Display Name](#display-name)
 
-### Application Identifier
+### Web Application Identifier
 
-N-character Application Identifier (provided by Weemo) <br/>
+N-character Web Application Identifier (provided by Weemo) <br/>
 
-This referrer should be the Application Identifier set into Weemo Allocation database.
+This referrer should be the Web Application Identifier set into Weemo Allocation database.
 
 Referrer forbidden characters: 
 

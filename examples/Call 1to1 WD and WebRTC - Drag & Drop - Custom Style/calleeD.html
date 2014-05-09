@@ -1,0 +1,95 @@
+<!-- This file is used by the callee, connects and waits for a call, used name is callee_uid -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>My Weemo Application: Callee</title>
+    <script type="text/javascript" src="https://download.weemo.com/js/webappid/YOUR_APP_IDENTIFIER"></script>
+    <script type="text/javascript" src="WeemoDragNDrop.js"></script>
+    <link rel="stylesheet" type="text/css" href="customWeemoCss.css">
+<style type="text/css">
+    body {
+        font-family: Helvetica;
+    }
+</style>
+</head>
+<body>
+    <script type="text/javascript">
+        if(window.location.protocol === 'file:'){alert('your project must be served from a webserver and not from the file system');}
+        var realTimeClient = "";
+        //Define the optional parameters
+        var options = {
+            debugLevel : 1,
+            defaultStyle : false, 
+            displayName : 'Callee'
+        };
+        // Initialize the Main Object with App Identifier, Token, WeemoType, options
+        var weemo = new Weemo("YOUR_APP_IDENTIFIER", "callee_uid", "internal", options);
+        // Call if the WeemoDriver is not running on the client computer and if the browser is not WebRTC-capable
+        weemo.onWeemoDriverNotStarted = function(downloadUrl) {
+            var answer = confirm('Click OK to download and install the Weemo client.');
+            if (answer == true)
+                window.location = downloadUrl;
+        };
+        // Get the Connection Handler callback when the JavaScript is connected to the real-time client
+        weemo.onConnectionHandler = function(message, code) {
+            if(window.console)
+                console.log("Connection Handler : " + message + ' ' + code);
+            switch(message) {
+                case 'connectedWeemoDriver':
+                    realTimeClient = "WeemoDriver";
+                break; 
+                case 'connectedWebRTC':
+                    realTimeClient = "WebRTC";
+                break;                 
+                case 'sipOk':
+                    document.getElementById('connecting').style.color = "#CCCCCC";
+                    document.getElementById('stat').innerHTML = "Connected as Callee using "+realTimeClient;
+                    document.getElementById('call').innerHTML = "Waiting for a call";
+                break;
+                case 'loggedasotheruser':
+                // force connection, kick other logged users
+                    weemo.authenticate(1);
+                break;
+            }
+        };
+        // Declare a variable "weemodragndrop" for drag and drop uses
+        var weemodragndrop;
+        // This function permits to catch events comming from the call
+        weemo.onCallHandler = function(callObj, args) {
+            if (args.type == "call" && args.status == "active") {
+                document.getElementById('call').innerHTML = "Call active";
+            }else if (args.type == "call" && args.status == "terminated") {
+                document.getElementById('call').innerHTML = "Waiting for a call";
+            } else if(args.type == 'webRTCcall' && args.status == 'active') {
+                document.getElementById('call').innerHTML = "Call active";
+                 // Drag and Drop initialization
+                weemodragndrop = WeemoDragNDrop();
+                weemodragndrop.init();
+            } else if (args.type == "webRTCcall" && args.status == "terminated") {
+                document.getElementById('call').innerHTML = "Waiting for a call";
+                if(weemodragndrop !== undefined && weemodragndrop.hasOwnProperty('destroy'))
+                    weemodragndrop.destroy();
+            } else if (args.type == 'webRTCcall' && args.status == 'incoming') {
+                var confirmStr;
+                if (callObj.dn !== "undefined" && callObj.dn !== undefined) {
+                    confirmStr = callObj.dn + ' invites you to video chat';
+                } else {
+                    confirmStr = 'A person invites you to video chat';
+                }
+                if (confirm(confirmStr)) {
+                    callObj.accept();
+                } else {
+                    callObj.hangup();
+                }
+            }
+        };
+        // Initialize connection between the real-time client and the browser
+        weemo.initialize();       
+    </script>
+    <h3>Welcome to Weemo HelloWorld App</h3>
+    <h4 id="connecting">Connecting as Callee...</h4>
+    <h4 id="stat"></h4>
+    <h4 id="call"></h4>
+</body>
+</html>
