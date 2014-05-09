@@ -3,13 +3,13 @@
 
 In this repository, you will find, wiki pages describing how to implement Weemo Video in web applications.
 
-- [Getting Started](https://github.com/weemo/Weemo.js_beta/wiki/Getting-Started)
-- [Quick-start WeemoDriver and WebRTC](https://github.com/weemo/Release-5.x/wiki/Javascript-API---Quick-start)
-- [Integration WeemoDriver and WebRTC](https://github.com/weemo/Release-5.x/wiki/Javascript-API-Integration)
-- [Definitions](https://github.com/weemo/Weemo.js_beta/wiki/Weemo-Naming-Rules)
+- [Getting Started](start.md)
+- [Quick-start WeemoDriver and WebRTC](quickstart.md)
+- [Integration WeemoDriver and WebRTC](integration.md)
+- [Definitions](naming.md)
 - [Sample Code](https://github.com/weemo/Weemo.js_beta/tree/master/examples)
-- [Upgrade from 4.2 to 5.1](https://github.com/weemo/Weemo.js_beta/wiki/Upgrade-from-4.2-to-5.1)
-- [Weemo Driver User Guide](https://github.com/weemo/Weemo.js_beta/wiki/Weemo-Driver-User-Guide)
+- [Upgrade from 4.2 to 5.1](upgrade42.md)
+- [Weemo Driver User Guide](userguide.md)
 
 For a full JavaScript API reference plese refer to our official documentation website : [http://docs.weemo.com/beta](http://docs.weemo.com/beta)
 
