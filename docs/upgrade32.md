@@ -6,10 +6,8 @@ This section describes how to implement new WeemoDriver Javascript API 4.0 when 
 
 ## Contents
 
-* [What has changed ?](#whats-change-)
-* [How to get WeemoDriver](upgrade32.md#how-to-get-weemodriver)
-    * [JavaScript API](#javascript-api)
-    * [WeemoDriver binary](#wemodriver-binaries)
+* [What has changed ?](#what-has-changed)
+* [JavaScript API](#javascript-api)
 * [API updates](#api-updates)
     * [Initialization](#initialization)
     * [Authentication](#authentication)
@@ -31,9 +29,8 @@ WeemoDriver 4.0 development comes with some new features and optimizations such 
     - manage video, audio and self-view enable/disable by the Web Application
     - Launch settings and share out window from Javascript
 
-## How to get WeemoDriver
 
-### Javascript API
+## Javascript API
 
 To get WeemoDriver.js JavaScript API, you need insert this code:
 
