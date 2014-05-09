@@ -1,4 +1,6 @@
-### Overview
+# Javascript API Quick-start
+
+## Overview
 
 This quick tutorial is a sum-up of the very mandatory milestones to follow in order to implement Weemo API into your Web Applications.
 

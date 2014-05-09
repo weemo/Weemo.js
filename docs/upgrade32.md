@@ -1,3 +1,5 @@
+# Upgrading Release 3.2 to 4.0
+
 ## Overview
 
 This section describes how to implement new WeemoDriver Javascript API 4.0 when you already integrated a WeemoDriver 3.2 in your Web Application.
@@ -6,14 +8,14 @@ This section describes how to implement new WeemoDriver Javascript API 4.0 when 
 
 * [What has changed ?](#whats-change-)
 * [How to get WeemoDriver](upgrade32.md#how-to-get-weemodriver)
-    * [JavaScript API](https://github.com/weemo/JavaScript-API/wiki/Upgrade-3.2-to-4.0#javascript-api)
-    * [WeemoDriver binary](https://github.com/weemo/JavaScript-API/wiki/Upgrade-3.2-to-4.0#wemodriver-binaries)
-* [API updates](https://github.com/weemo/JavaScript-API/wiki/Upgrade-3.2-to-4.0#api-updates)
-    * [Initialization](https://github.com/weemo/JavaScript-API/wiki/Upgrade-3.2-to-4.0#initialization)
-    * [Authentication](https://github.com/weemo/JavaScript-API/wiki/Upgrade-3.2-to-4.0#authentication)
-    * [Call creation](https://github.com/weemo/JavaScript-API/wiki/Upgrade-3.2-to-4.0#call-creation)
-    * [Call controls](https://github.com/weemo/JavaScript-API/wiki/Upgrade-3.2-to-4.0#call-controls)
-    * [Error handling](https://github.com/weemo/JavaScript-API/wiki/Upgrade-3.2-to-4.0#error-handling)
+    * [JavaScript API](#javascript-api)
+    * [WeemoDriver binary](#wemodriver-binaries)
+* [API updates](#api-updates)
+    * [Initialization](#initialization)
+    * [Authentication](#authentication)
+    * [Call creation](#call-creation)
+    * [Call controls](#call-controls)
+    * [Error handling](#error-handling)
 
 ## What has changed?
 
@@ -21,7 +23,7 @@ WeemoDriver 4.0 development comes with some new features and optimizations such 
 
 - New allocation model, UID and API-KEY are changed by Token and Web Application Identifier
 - Dynamic Javascript API download
-- Rewrite of Javascript API, update [Weemo](https://github.com/weemo/JavaScript-API/wiki/Javascript-API-Reference#weemo-main-object) object methods and creation of a objet [WeemoCall](https://github.com/weemo/JavaScript-API/wiki/Javascript-API-Reference#weemocall-object) to manage calls
+- Rewrite of Javascript API, update Weemo object methods and creation of a objet WeemoCall to manage calls
 - New features of Javascript API:
     - getVersion method to see what version of WeemoDriver you are using
     - reset method to restart the WeemoDriver from the Web Application

@@ -1,4 +1,6 @@
-### Contents
+# API Naming Rules
+
+## Contents
 
 * [Application Identifier](naming.md#wiki-application-identifier)
 * [Uid](naming.md#uid)

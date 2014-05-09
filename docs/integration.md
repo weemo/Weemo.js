@@ -1,8 +1,10 @@
-### Overview
+# Javascript API Integration
+
+## Overview
 
 This quick tutorial summarizes the major steps to follow in order to implement Weemo real-time video in your Web Applications.
 
-### General Architecture
+## General Architecture
 
 For minimal integration, you only need two things:<br/> 
 * A webserver to host Javascript files (not necessary if you link to an external site)

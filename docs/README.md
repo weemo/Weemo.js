@@ -1,6 +1,5 @@
 # WeemoDriver JavaScript API
 
-
 In this repository, you will find, wiki pages describing how to implement Video Collaboration on your Websites.
 
 - [Javascript API Quick-start](quickstart.md)
