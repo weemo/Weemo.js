@@ -37,7 +37,4 @@ Weemo relies on open-standard protocols such as SIP, XMPP and HTTPS. The solutio
 Weemo provides both the client technology and integration means and a worldwide cloud infrastructure. These building blocks are designed to work together as one easy-to-use solution. The application vendor, provider of the web application to be integrated with Weemo, will implement JavaScript commands in order to control local clients and, as needed, will have access to REST APIs to perform management tasks including provisioning named users.
 </p>
 
-Learn more about weemo prducts on our corporate website : 
-<a href="http://www.weemo.com">
-<img src="http://docs.weemo.com/img/website_shot.png" width="750px" />
-</a>
+Learn more about weemo prducts on our corporate <a href="http://www.weemo.com">website</a>.
