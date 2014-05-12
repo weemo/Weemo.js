@@ -7,7 +7,7 @@ In this repository, you will find, wiki pages describing how to implement Weemo 
 - [Quick-start WeemoDriver and WebRTC](quickstart.md)
 - [Integration WeemoDriver and WebRTC](integration.md)
 - [Definitions](naming.md)
-- [Sample Code](https://github.com/weemo/Weemo.js_beta/tree/master/examples)
+- [Sample Code](https://github.com/weemo/Weemo.js/tree/master/examples)
 - [Upgrade from 4.2 to 5.1](upgrade42.md)
 - [Weemo Driver User Guide](userguide.md)
 
