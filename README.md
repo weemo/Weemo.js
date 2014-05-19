@@ -3,7 +3,7 @@
 
 In this repository, you will find, wiki pages describing how to implement Weemo Video in web applications.
 
-- [Getting Started](start.md)
+- [Getting Started](docs/start.md)
 - [Quick-start WeemoDriver and WebRTC](quickstart.md)
 - [Integration WeemoDriver and WebRTC](integration.md)
 - [Definitions](naming.md)
