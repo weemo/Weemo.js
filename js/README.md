@@ -41,8 +41,7 @@ weemo.onCallHandler = function(callObj, args) {
         weemodragndrop = WeemoDragNDrop();
         weemodragndrop.init();
     } else if (args.type == "webRTCcall" && args.status == "terminated") {       
-        if(weemodragndrop !== undefined && weemodragndrop.hasOwnProperty('destroy'))
-            weemodragndrop.destroy();
+        if(weemodragndrop !== undefined && weemodragndrop.hasOwnProperty('destroy')) { weemodragndrop.destroy(); }
     }
 };
 ```
