@@ -78,9 +78,9 @@ This describes the kind of video call you want established with ```createCall```
 
 For each real-time client that Weemo supports, you can initiate a call between two devices using the same real-time client by setting the same ```AppId``` and providing a ```UID``` and ```display name``` the following links describe how to :
 
-- iOS - sdk_helper - [How to use](https://github.com/weemo/iOS-SDK-Helper/README.md)
-- Android - sdk_helper - [How to use](https://github.com/weemo/Android-SDK-Helper/README.md)
-- Phonegap - sdk_helper - [How to use](https://github.com/weemo/Phonegap-SDK-Helper/README.md) 
+- iOS - sdk_helper - [How to use](https://github.com/weemo/iOS-SDK-Helper/blob/master/README.md)
+- Android - sdk_helper - [How to use](https://github.com/weemo/Android-SDK-Helper/blob/master/README.md)
+- Phonegap - sdk_helper - [How to use](https://github.com/weemo/Phonegap-SDK-Helper/blob/master/README.md) 
 - JavaScript- API example  - [How to use](/examples/README.md#how-to-use-the-examples) | [How to deploy](/examples/README.md#how-to-deploy-the-examples)
 
 ## Make a call between different Weemo real-time clients
