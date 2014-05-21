@@ -11,7 +11,7 @@ In this repository, you will find, wiki pages describing how to implement Weemo 
 - [Upgrade from 4.2 to 5.1](docs/upgrade42.md)
 - [Weemo Driver User Guide](docs/userguide.md)
 
-For a full JavaScript API reference plese refer to our official documentation website : [http://docs.weemo.com/beta](http://docs.weemo.com/beta)
+For a full JavaScript API reference plese refer to our official documentation website : [http://docs.weemo.com](http://docs.weemo.com)
 
 
 ## System Requirements
