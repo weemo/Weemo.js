@@ -5,18 +5,18 @@ In this repository, you will find examples describing how to implement Weemo Vid
 
 
 ### Content:
-- [How to deploy the examples](https://github.com/weemo/Weemo.js_beta/tree/master/examples#how-to-deploy-the-examples)
-    - [Requirement](https://github.com/weemo/Weemo.js_beta/tree/master/examples#requirement)
-    - [Setting up the AppID](https://github.com/weemo/Weemo.js_beta/tree/master/examples#setting-up-the-appid)
-        - [One-to-one examples](https://github.com/weemo/Weemo.js_beta/tree/master/examples#one-to-one-examples)
-        - [Multi-party example (WeemoDriver only)](https://github.com/weemo/Weemo.js_beta/tree/master/examples#multi-party-example-weemodriver-only)
-- [How to use the examples](https://github.com/weemo/Weemo.js_beta/tree/master/examples#how-to-use-the-examples)
-    - [One-to-one examples](https://github.com/weemo/Weemo.js_beta/tree/master/examples#one-to-one-examples-1)
-    - [Multi-party example (WeemoDriver only)](https://github.com/weemo/Weemo.js_beta/tree/master/examples#multi-party-example-weemodriver-only-1)
+- [How to deploy the examples](https://github.com/weemo/Weemo.js/tree/master/examples#how-to-deploy-the-examples)
+    - [Requirement](https://github.com/weemo/Weemo.js/tree/master/examples#requirement)
+    - [Setting up the AppID](https://github.com/weemo/Weemo.js/tree/master/examples#setting-up-the-appid)
+        - [One-to-one examples](https://github.com/weemo/Weemo.js/tree/master/examples#one-to-one-examples)
+        - [Multi-party example (WeemoDriver only)](https://github.com/weemo/Weemo.js/tree/master/examples#multi-party-example-weemodriver-only)
+- [How to use the examples](https://github.com/weemo/Weemo.js/tree/master/examples#how-to-use-the-examples)
+    - [One-to-one examples](https://github.com/weemo/Weemo.js/tree/master/examples#one-to-one-examples-1)
+    - [Multi-party example (WeemoDriver only)](https://github.com/weemo/Weemo.js/tree/master/examples#multi-party-example-weemodriver-only-1)
 - Examples
-    - [Call 1to1 WD and WebRTC](https://github.com/weemo/Weemo.js_beta/tree/master/examples/Call%201to1%20WD%20and%20WebRTC)
-    - [Call 1to1 WD and WebRTC - Drag & Drop - Custom Style](https://github.com/weemo/Weemo.js_beta/tree/master/examples/Call%201to1%20WD%20and%20WebRTC%20-%20Drag%20%26%20Drop%20-%20Custom%20Style)
-    - [Conference Call WD only](https://github.com/weemo/Weemo.js_beta/tree/master/examples/Conference%20Call%20WD%20only)
+    - [Call 1to1 WD and WebRTC](https://github.com/weemo/Weemo.js/tree/master/examples/Call%201to1%20WD%20and%20WebRTC)
+    - [Call 1to1 WD and WebRTC - Drag & Drop - Custom Style](https://github.com/weemo/Weemo.js/tree/master/examples/Call%201to1%20WD%20and%20WebRTC%20-%20Drag%20%26%20Drop%20-%20Custom%20Style)
+    - [Conference Call WD only](https://github.com/weemo/Weemo.js/tree/master/examples/Conference%20Call%20WD%20only)
 
 ### How to deploy the examples
 
@@ -25,7 +25,7 @@ In this repository, you will find examples describing how to implement Weemo Vid
 - It is important that the project is served from a webserver and not from the file system when using WebRTC.
 - Be aware of your AppId, and understand what is a ```UID``` and a ```Display Name```
 
-You can find more details about AppID, UID and Display Name [here](https://github.com/weemo/Weemo.js_beta/wiki/Getting-Started)
+You can find more details about AppID, UID and Display Name [here](https://github.com/weemo/Weemo.js/blob/master/docs/start.md)
 
 ##### Setting up the AppID
 
@@ -55,7 +55,7 @@ In the **caller.html**, you will be connected using **caller_uid** as a ```UID``
 In this example, the ```UID``` and ```Display Name``` are already set. 
 In the **host.html**, you will be connected using **host_uid** as a ```UID``` and **Host** as a ```Display Name```, and if you are using **attendee1.html** or **attendee2.html**, you will be connected using **attendee_one_uid** or **attendee_two_uid** as a ```UID``` and **Attendee 1** or **Attendee 2** as a ```Display Name```.
 
->You can find more details about ```AppID```, ```UID``` and ```Display Name``` [here](https://github.com/weemo/Weemo.js_beta/wiki/Getting-Started)
+>You can find more details about ```AppID```, ```UID``` and ```Display Name``` [here](https://github.com/weemo/Weemo.js/blob/master/docs/start.md)
 
 
 ### How to use the examples
@@ -103,11 +103,11 @@ Connected as Attendee using WeemoDriver
 
 # Weemo JavaScript API Documentation
 
-For a full JavaScript API reference plese refer to our official documentation website : [http://docs.weemo.com/beta](http://docs.weemo.com/beta) and refer to our Github documentation:
+For a full JavaScript API reference plese refer to our official documentation website : [http://docs.weemo.com/](http://docs.weemo.com/) and refer to our Github documentation:
 
-- [Quick-start WeemoDriver and WebRTC](https://github.com/weemo/Release-5.x/wiki/Javascript-API---Quick-start)
-- [Integration WeemoDriver and WebRTC](https://github.com/weemo/Release-5.x/wiki/Javascript-API-Integration)
-- [Definitions](https://github.com/weemo/Weemo.js_beta/wiki/Weemo-Naming-Rules)
+- [Quick-start WeemoDriver and WebRTC](https://github.com/weemo/Weemo.js/blob/master/docs/quickstart.md)
+- [Integration WeemoDriver and WebRTC](https://github.com/weemo/Weemo.js/blob/master/docs/integration.md)
+- [Definitions](https://github.com/weemo/Weemo.js/blob/master/docs/naming.md)
 
 ## Hardware Requirements
 
