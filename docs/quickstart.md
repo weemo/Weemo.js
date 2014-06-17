@@ -55,7 +55,7 @@ var options = {
 ```
 Refer to the [Javascript API documentation](http://docs.weemo.com/release/5.1/js/interface_weemo.html#a63d42d58d2f36203a958bf63e3b69173) for the complete definitions.
 
-For more information about WEEMO_TYPE, see [here](https://github.com/weemo/Weemo.js_beta/wiki/Getting-Started#wiki-weemo-call-type).
+For more information about WEEMO_TYPE, see [here](https://github.com/weemo/Weemo.js/blob/master/docs/start.md#weemo-type).
 
 ### Step 4 - WeemoDriver or WebRTC detection
 
@@ -117,7 +117,7 @@ weemo.createCall("CALLEE_UID", "CALL_TYPE", "CALLEE_DISPLAYNAME")
 
 For more information about createCall() see our reference [here](http://docs.weemo.com/release/5.1/js/interface_weemo.html#ad053bf044f03d9edd544a75ee95c55a7).
 
-For more information about CALL_TYPE, see [here](https://github.com/weemo/Weemo.js_beta/wiki/Getting-Started#wiki-weemo-call-type).
+For more information about CALL_TYPE, see [here](https://github.com/weemo/Weemo.js/blob/master/docs/start.md#weemo-type).
 
 ### _Optional 1 - Set Display Name_
 
