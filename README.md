@@ -28,7 +28,7 @@ For a full JavaScript API reference plese refer to our official documentation we
 
 | Weemo Client | Browser | Operating Systems |
 |---|---|---|
-| WeemoDriver for Windows | IE 8, 9, 10, 11; Firefox 25 or later; Chrome 30 or later | Windows 8.1, 8, 7, XP SP3 |
+| WeemoDriver for Windows | IE 9, 10, 11; Firefox 25 or later; Chrome 30 or later | Windows 8.1, 8, 7, XP SP3 |
 | WeemoDriver for Mac OS X | Safari 5  or later; Firefox 24 or later; Chrome 30 or later | Mac OS 10.9, 10.8, 10.7, 10.6 |
 | Weemo WebRTC | Chrome 30 or later | Windows; Mac OS X; Android; Linux |
 
