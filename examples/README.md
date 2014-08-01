@@ -3,21 +3,6 @@
 
 In this repository, you will find examples describing how to implement Weemo Video.
 
-
-### Content:
-- [How to deploy the examples](https://github.com/weemo/Weemo.js/tree/master/examples#how-to-deploy-the-examples)
-    - [Requirement](https://github.com/weemo/Weemo.js/tree/master/examples#requirement)
-    - [Setting up the AppID](https://github.com/weemo/Weemo.js/tree/master/examples#setting-up-the-appid)
-        - [One-to-one examples](https://github.com/weemo/Weemo.js/tree/master/examples#one-to-one-examples)
-        - [Multi-party example (WeemoDriver only)](https://github.com/weemo/Weemo.js/tree/master/examples#multi-party-example-weemodriver-only)
-- [How to use the examples](https://github.com/weemo/Weemo.js/tree/master/examples#how-to-use-the-examples)
-    - [One-to-one examples](https://github.com/weemo/Weemo.js/tree/master/examples#one-to-one-examples-1)
-    - [Multi-party example (WeemoDriver only)](https://github.com/weemo/Weemo.js/tree/master/examples#multi-party-example-weemodriver-only-1)
-- Examples
-    - [Call 1to1 WD and WebRTC](https://github.com/weemo/Weemo.js/tree/master/examples/Call%201to1%20WD%20and%20WebRTC)
-    - [Call 1to1 WD and WebRTC - Drag & Drop - Custom Style](https://github.com/weemo/Weemo.js/tree/master/examples/Call%201to1%20WD%20and%20WebRTC%20-%20Drag%20%26%20Drop%20-%20Custom%20Style)
-    - [Conference Call WD only](https://github.com/weemo/Weemo.js/tree/master/examples/Conference%20Call%20WD%20only)
-
 ### How to deploy the examples
 
 ##### Requirements
@@ -100,7 +85,7 @@ Connected as Caller using (WeemoDriver|WebRTC)
 
 ##### Multi-party example (WeemoDriver only)
 
-The multi party example is composed of three html files. One called **host.html** and the other ones are named ```attendee1.html``` and ```attendee2.html```. In order to initiate a call between these three pages here are the steps you have to follow:
+The multi party example is composed of three html files. One called **host.html** and the other ones are named ```attendeeInternal.html``` and ```attendeeExternal.html```. In order to initiate a call between these three pages here are the steps you have to follow:
 
 - Open ```host.html``` in one computer and wait te be connected. You will know that you are connected when you will see these sentences appear in your browswer as well as a button labeled **'Click to Host a video conference'**:
 
@@ -108,7 +93,7 @@ The multi party example is composed of three html files. One called **host.html*
 Connected as Host using WeemoDriver.
 ```
 
-- At this moment open the ```attendee1.html``` and  ```attendee2.html``` in two other computers and wait to be connected. You will know that you are connected when you will see the following sentence appears in your browser as well as a button labeled **'Click to join the Host video conference'**:
+- At this moment open the ```attendeeInternal.html``` and  ```attendeeExternal.html``` in two other computers and wait to be connected. You will know that you are connected when you will see the following sentence appears in your browser as well as a button labeled **'Click to join the Host video conference'**:
 
 ```JavaScript
 Connected as Attendee using WeemoDriver
