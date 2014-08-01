@@ -21,14 +21,14 @@
             //Define the optional parameters
             options = {
                 debugLevel : 1, 
-                displayName : 'Attendee Internal'
+                displayName : 'Attendee Internal',
                 defaultStyle: true,
                 legacy: false,
             },
             //Intialize Weemo Function
             initializeWeemo = function (token) {
                 // Initialize the Main Object with App Identifier, Token, WeemoType, options
-                weemo = new Weemo('YOUR_APP_IDENTIFIER', token, 'external', options);
+                weemo = new Weemo('YOUR_APP_IDENTIFIER', token, 'internal', options);
                 // Call if the WeemoDriver is not running and the client computer
                 weemo.onWeemoDriverNotStarted = function(downloadUrl) {
                     var answer = confirm('Click OK to download and install the Weemo client.');
