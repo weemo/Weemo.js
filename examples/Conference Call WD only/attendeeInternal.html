@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>My Weemo Application: Attendee</title>
-    <script type="text/javascript" src="https://download.weemo.com/js/webappid/b654812a05d0"></script>
+    <script type="text/javascript" src="https://download.weemo.com/js/webappid/YOUR_APP_IDENTIFIER"></script>
 <style type="text/css">
     body{
         font-family: Helvetica;
@@ -14,17 +14,21 @@
 <body>
     <script type="text/javascript">
         var HOST_UID = 'host_uid',
+            ATTENDEE_UID = 'attendee_internal_uid',
+            AUTH_URL = 'http://YOUR_AUTH_URL/gettoken?uid=',
             realTimeClient = '',
             weemo = {},
             //Define the optional parameters
             options = {
                 debugLevel : 1, 
-                displayName : 'Attendee 2'
+                displayName : 'Attendee Internal'
+                defaultStyle: true,
+                legacy: false,
             },
             //Intialize Weemo Function
-            initializeWeemo = function () {
+            initializeWeemo = function (token) {
                 // Initialize the Main Object with App Identifier, Token, WeemoType, options
-                weemo = new Weemo('b654812a05d0', HOST_UID, 'external', options);
+                weemo = new Weemo('YOUR_APP_IDENTIFIER', token, 'external', options);
                 // Call if the WeemoDriver is not running and the client computer
                 weemo.onWeemoDriverNotStarted = function(downloadUrl) {
                     var answer = confirm('Click OK to download and install the Weemo client.');
@@ -67,6 +71,29 @@
                 //Initialize connection between the real-time client and the browser
                 weemo.initialize();
             },
+            getToken = function (uid) {
+                var xhr;
+                if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+                    xhr = new XMLHttpRequest();
+                }
+                else { // code for IE6, IE5
+                    xhr = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+                
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        var response = xhr.responseText,
+                            responseJson = JSON.parse(response),
+                            token = responseJson.token;
+                        initializeWeemo(token);
+                    }
+                }
+                xhr.open('GET', AUTH_URL + uid, true);
+                xhr.send();
+            },
+            init = function () {
+                getToken(ATTENDEE_UID);
+            },
             joinMultiParty = function () {
                 weemo.createCall(HOST_UID, 'attendee', 'Host');
             },
@@ -94,10 +121,10 @@
             script.type = 'text/javascript';
             document.getElementsByTagName('head')[0].appendChild(script);
             // Start polling...
-            checkReady(initializeWeemo);
+            checkReady(init);
         } else {
             options.useJquery = false;
-            initializeWeemo(); 
+            init(); 
         }
     </script>
     <h3>Welcome to Weemo HelloWorld App</h3>

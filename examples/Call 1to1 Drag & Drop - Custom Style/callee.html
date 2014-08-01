@@ -60,13 +60,13 @@
                     };
                     // This function permits to catch events comming from the call
                     weemo.onCallHandler = function(callObj, args) {
-                        if (args.type == 'call' && args.status == 'active') {
+                        if (args.type === 'call' && args.status === 'active') {
                             document.getElementById('call').innerHTML = 'Call active';
-                        }else if (args.type == 'call' && args.status == 'terminated') {
+                        }else if (args.type === 'call' && args.status === 'terminated') {
                             document.getElementById('call').innerHTML = 'Waiting for a call';
-                        } else if(args.type == 'webRTCcall' && args.status == 'active') {
+                        } else if(args.type === 'webRTCcall' && args.status === 'active') {
                             document.getElementById('call').innerHTML = 'Call active';
-                        } else if (args.type == 'webRTCcall' && args.status == 'terminated') {
+                        } else if (args.type === 'webRTCcall' && args.status === 'terminated') {
                             document.getElementById('call').innerHTML = 'Waiting for a call';
                         }
                     };
@@ -84,7 +84,7 @@
                     }
                     
                     xhr.onreadystatechange = function () {
-                        if (xhr.readyState == 4 && xhr.status == 200) {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
                             var response = xhr.responseText,
                                 responseJson = JSON.parse(response),
                                 token = responseJson.token;
