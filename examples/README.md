@@ -46,8 +46,9 @@ var weemo = new Weemo("YOUR_APP_IDENTIFIER", token, "internal", options);
 
 Once your AppId is setup, you will have to setup your authentication url.
 To do so, for each of the Javascript examples you want to use, you must edit the .html file and replace the placeholder "YOUR_AUTH_URL" by your authentication server url in the following lines:
+
 ```JavaScript
-AUTH_URL = 'http://YOUR_AUTH_URL/gettoken?uid=',
+AUTH_URL = 'http://YOUR_AUTH_URL/gettoken?uid='
 ```
 
 Now that you have setup the AppId and the authentication server url you can upload the examples on a webserver and start using them.
