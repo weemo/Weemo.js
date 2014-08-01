@@ -12,7 +12,7 @@ appear below.
 ##### SDK Helpers:
 - [iOS - sdk_helper](https://github.com/weemo/iOS-SDK_beta)
 - [Android - sdk_helper](https://github.com/weemo/Android-SDK_beta)
-- [Phonegap - sdk_helper](https://github.com/weemo/Phonegap-SDK_Beta)
+
 
 ##### JavaScript API examples:
 - [Javascript API - examples](https://github.com/weemo/Weemo.js_beta/tree/master/examples)
@@ -80,7 +80,6 @@ For each real-time client that Weemo supports, you can initiate a call between t
 
 - iOS - sdk_helper - [How to use](https://github.com/weemo/iOS-SDK-Helper/blob/master/README.md)
 - Android - sdk_helper - [How to use](https://github.com/weemo/Android-SDK-Helper/blob/master/README.md)
-- Phonegap - sdk_helper - [How to use](https://github.com/weemo/Phonegap-SDK-Helper/blob/master/README.md) 
 - JavaScript- API example  - [How to use](/examples/README.md#how-to-use-the-examples) | [How to deploy](/examples/README.md#how-to-deploy-the-examples)
 
 ## Make a call between different Weemo real-time clients
