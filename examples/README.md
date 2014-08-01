@@ -23,13 +23,14 @@ In this repository, you will find examples describing how to implement Weemo Vid
 ##### Requirement
 
 - It is important that the project is served from a webserver and not from the file system when using WebRTC.
-- Be aware of your AppId, and understand what is a ```UID``` and a ```Display Name```
+- Be aware of your AppId, and understand what is a ```UID```, a ```TOKEN``` and a ```Display Name```.
+- You will have to run a authenticatoin server from Weemo in order to get a token, and be aware of the address of this server, we will use this address into the AUTH_URL variable.
 
-You can find more details about AppID, UID and Display Name [here](https://github.com/weemo/Weemo.js/blob/master/docs/start.md)
+You can find more details about AppID, UID, Token and Display Name [here](https://github.com/weemo/Weemo.js/blob/master/docs/start.md)
 
 ##### Setting up the AppID
 
-Once you have received your ```AppID``` provided by Weemo, you can setup these examples with your AppId in order to test the API. The only thing you have to do is to setup the ```AppId```.
+Once you have received your ```AppID``` provided by Weemo, you can setup these examples with your AppId, UID in order to test the API. 
 To do so, for each of the Javascript examples you want to use, you must edit the .html file and
 replace the placeholder "YOUR_APP_IDENTIFIER" by your AppID in the following lines"
 
@@ -40,10 +41,16 @@ replace the placeholder "YOUR_APP_IDENTIFIER" by your AppID in the following lin
 and 
 
 ```JavaScript
-var weemo = new Weemo("YOUR_APP_IDENTIFIER", "callee_uid", "internal", options);
+var weemo = new Weemo("YOUR_APP_IDENTIFIER", token, "internal", options);
 ```
 
-Now that you have setup the AppId you can upload the examples on a webserver and start using them.
+Once your AppId is setup, you will have to setup your authentication url.
+To do so, for each of the Javascript examples you want to use, you must edit the .html file and replace the placeholder "YOUR_AUTH_URL" by your authentication server url in the following lines:
+```JavaScript
+AUTH_URL = 'http://YOUR_AUTH_URL/gettoken?uid=',
+```
+
+Now that you have setup the AppId and the authentication server url you can upload the examples on a webserver and start using them.
 
 ##### One-to-one examples
 
@@ -53,9 +60,9 @@ In the **caller.html**, you will be connected using **caller_uid** as a ```UID``
 ##### Multi-party example (WeemoDriver only)
 
 In this example, the ```UID``` and ```Display Name``` are already set. 
-In the **host.html**, you will be connected using **host_uid** as a ```UID``` and **Host** as a ```Display Name```, and if you are using **attendee1.html** or **attendee2.html**, you will be connected using **attendee_one_uid** or **attendee_two_uid** as a ```UID``` and **Attendee 1** or **Attendee 2** as a ```Display Name```.
+In the **host.html**, you will be connected using **host_uid** as a ```UID``` and **Host** as a ```Display Name```, if you are using **attendeeInternal.html** , you will be connected using **attendee_internal_uid** as a ```UID``` and **Attendee Internal** as a ```Display Name```. If you are using **attendeExternal.html** you won't have a ```UID``` because as a external user Weemo you will just be able to join the conference of the host (in this case, you can see in the exemple that instead of getting a token and authenticate, you will use the ```UID``` of the internal user as token).
 
->You can find more details about ```AppID```, ```UID``` and ```Display Name``` [here](https://github.com/weemo/Weemo.js/blob/master/docs/start.md)
+>You can find more details about ```AppID```, ```UID```, ```TOKEN``` and ```Display Name``` [here](https://github.com/weemo/Weemo.js/blob/master/docs/start.md)
 
 
 ### How to use the examples
