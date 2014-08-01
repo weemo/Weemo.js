@@ -1,0 +1,258 @@
+.weemo-videobox {
+  background: #000000;
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  width: 480px;
+  height: 270px;
+  overflow: hidden;
+  z-index: 99999;
+}
+.weemo-videobox#weemo-videobox-container {
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.weemo-videobox #weemo-remotevideo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.weemo-videobox .weemo-no-crop {
+  width: 100%;
+  height: 100%;
+}
+.weemo-videobox #weemo-local-viewbox,
+.weemo-videobox #weemo-selfviewbox {
+  width: 20%;
+  height: 20%;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 100000;
+}
+.weemo-videobox #weemo-local-viewbox.full,
+.weemo-videobox #weemo-selfviewbox.full {
+  width: 100%;
+  height: 100%;
+}
+.weemo-videobox #weemo-local-view,
+.weemo-videobox #weemo-selfview {
+  width: 100%;
+  background: #000000;
+  position: absolute;
+  right: 0;
+}
+.weemo-videobox .weemo-disabled {
+  display: none;
+}
+.weemo-videobox #weemo-buttonsbar {
+  z-index: 100009;
+  width: 152px;
+  height: 28px;
+  position: absolute;
+  bottom: 4px;
+  left: 164px;
+  display: none;
+  /* #weemo-buttonnopip          { background-position: 0 96px;}
+    #weemo-buttonnopip.active   { background-position: -152px 96px;}
+    #weemo-buttonnopip.disabled { background-position: -114px 96px;}
+
+    #weemo-buttonmute           { background-position: 0 320px;}
+    #weemo-buttonmute.active    { background-position: -152px 320px;}
+    #weemo-buttonmute.disabled  { background-position: -114px 320px;}
+
+    #weemo-buttonhangup         { background-position: 0 128px;}
+    #weemo-buttonhangup.active  { background-position: 0 0;}
+
+    #weemo-buttonnovideo            { background-position: 0 288px;}
+    #weemo-buttonnovideo.active     { background-position: -152px 288px;}
+    #weemo-buttonnovideo.disabled   { background-position: -114px 288px;}*/
+}
+.weemo-videobox #weemo-buttonsbar.active {
+  display: block;
+}
+.weemo-videobox #weemo-buttonsbar > div {
+  background-image: url('https://static.weemo.com/img/buttons_wide.png');
+  height: 28px;
+  width: 34px;
+  float: left;
+  cursor: pointer;
+}
+.weemo-videobox #weemo-buttonsbar #weemo-buttonnopip {
+  background-position: -2px 94px;
+}
+.weemo-videobox #weemo-buttonsbar #weemo-buttonnopip.active {
+  background-position: -154px 94px;
+}
+.weemo-videobox #weemo-buttonsbar #weemo-buttonnopip.disabled {
+  background-position: -116px 94px;
+}
+.weemo-videobox #weemo-buttonsbar #weemo-buttonmute {
+  background-position: -2px 318px;
+}
+.weemo-videobox #weemo-buttonsbar #weemo-buttonmute.active {
+  background-position: -154px 318px;
+}
+.weemo-videobox #weemo-buttonsbar #weemo-buttonmute.disabled {
+  background-position: -116px 318px;
+}
+.weemo-videobox #weemo-buttonsbar #weemo-buttonhangup {
+  background-position: -2px 126px;
+}
+.weemo-videobox #weemo-buttonsbar #weemo-buttonhangup.active {
+  background-position: -2px -2px;
+}
+.weemo-videobox #weemo-buttonsbar #weemo-buttonnovideo {
+  background-position: -2px 286px;
+}
+.weemo-videobox #weemo-buttonsbar #weemo-buttonnovideo.active {
+  background-position: -154px 286px;
+}
+.weemo-videobox #weemo-buttonsbar #weemo-buttonnovideo.disabled {
+  background-position: -116px 286px;
+}
+.weemo-videobox #weemo-watermark {
+  height: 48px;
+  width: 71px;
+  display: block;
+  background: url('https://static.weemo.com/img/Watermark_Wide.png');
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+}
+.weemo-videobox #weemo-disabledvideo {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 40%;
+  font-family: sans-serif;
+  color: #d1d1d1;
+}
+/* Responsive */
+/*@media(min-width:992px){
+    #weemo-videobox {width:720px; height: 360px;}
+    #weemo-buttonsbar {left: 285px !important;}
+}*/
+.weemo-startcallbox {
+  width: 320px;
+  height: 180px;
+  background-color: #3e3e3e;
+  color: #FFF;
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  font-family: Arial;
+  -moz-box-shadow: 0px 5px 10px 0px #000000;
+  -webkit-box-shadow: 0px 5px 10px 0px #000000;
+  -o-box-shadow: 0px 5px 10px 0px #000000;
+  box-shadow: 0px 5px 10px 0px #000000;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=#000000, Direction=180, Strength=10);
+  z-index: 99999;
+}
+.weemo-startcallbox .button-actions a {
+  width: 34px;
+  height: 27px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: block;
+  margin: 1px;
+}
+.weemo-startcallbox .button-actions a:hover {
+  border: 1px solid #656565;
+  margin: 0;
+}
+.weemo-startcallbox .button-actions {
+  width: 140px;
+  height: 28px;
+  position: absolute;
+  left: 116px;
+  bottom: 9px;
+}
+.weemo-startcallbox .button-actions .container {
+  width: 35px;
+  height: 28px;
+  float: left;
+}
+.weemo-startcallbox .name {
+  position: absolute;
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+.weemo-startcallbox .picto {
+  background-repeat: no-repeat;
+  position: absolute;
+}
+.weemo-startcallbox .logo-weemo {
+  width: 45px;
+  height: 31px;
+  position: absolute;
+  bottom: 6px;
+  left: 28px;
+  background-image: url('https://static.weemo.com/img/outgoingcall/logo-weemo.png');
+  background-position: center center;
+}
+/* INCOMING BOX */
+.incoming-call {
+  height: 90px;
+}
+.incoming-call .picto {
+  width: 60px;
+  height: 37px;
+  background-image: url('https://static.weemo.com/img/incomingcall/incoming.gif');
+  top: 26px;
+  left: 20px;
+}
+.incoming-call .logo-weemo {
+  display: none;
+}
+.incoming-call .button-actions {
+  left: 140px;
+}
+.incoming-call .name {
+  left: 82px;
+  width: 220px;
+  text-align: center;
+  top: 16px;
+}
+.incoming-call .button-actions a.video {
+  background-image: url('https://static.weemo.com/img/incomingcall/picto-video.png');
+}
+.incoming-call .button-actions a.ignore {
+  background-image: url('https://static.weemo.com/img/incomingcall/picto-ignore.png');
+}
+.incoming-call .button-actions a.hangup {
+  background-image: url('https://static.weemo.com/img/incomingcall/picto-hangup.png');
+}
+/**
+ * OUTGOING CALL
+ */
+.outgoing-call .picto {
+  height: 30px;
+  width: 100%;
+  background: url('https://static.weemo.com/img/incomingcall/outgoing.gif') center no-repeat;
+  top: 50px;
+}
+.outgoing-call .logo-weemo {
+  bottom: 8px;
+  left: 10px;
+}
+.outgoing-call .name {
+  width: 100%;
+  text-align: center;
+  top: 85px;
+}
+.outgoing-call .button-actions a.hangup {
+  background-image: url('https://static.weemo.com/img/outgoingcall/hangup.png');
+}
+/*.outgoing-call .button-actions a.video {
+    background-image: url('@{img}outgoingcall/video.png');
+}
+
+.outgoing-call .button-actions a.settings {
+    background-image: url('@{img}outgoingcall/settings.png');
+}*/
