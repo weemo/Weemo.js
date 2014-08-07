@@ -10,66 +10,86 @@
         font-family: Helvetica;
     }
     #video-container {
-        position: absolute;
-        top: 275px;
-        left: 50px;
         width: 320px;
         height: 180px;
         border: 1px solid black;
         background: #0074bc;
+        margin-top: 20px;
+    }
+    #error {
+        border: 4px solid red;
+        display: none;
+        width: 50%;
+        padding: 14px;
+    }
+
+    #error h1 {
+        margin: 0;
     }
 </style>
 </head>
 <body>
+    <div id="error">
+        <h1>An error occurs:</h1>
+        <div id="error-content"></div>
+    </div>
     <script type="text/javascript">
-        if(window.location.protocol === 'file:'){alert('your project must be served from a webserver and not from the file system');}
-            var UID_USER = 'caller_uid',
+        if (window.location.protocol === 'file:') { alert('your project must be served from a webserver and not from the file system'); }
+        // Here is the definition of the uid used by this user and the authentication url used in order to get a token
+        var UID_USER = 'caller_uid',
             AUTH_URL = 'http://YOUR_AUTH_URL/gettoken?uid=',
             realTimeClient = '',
             weemo = {},
+            script,
+            // Define the optional parameters
+            options = {
+                debugLevel : 1,
+                displayName : 'Caller',
+                defaultStyle: true,
+                legacy: false,
+                container : 'video-container'
+            },
             //Intialize Weemo Function
             initializeWeemo = function (token) {
                 // Initialize the Main Object with App Identifier, Token, WeemoType, options
                 weemo = new Weemo('YOUR_APP_IDENTIFIER', token, 'internal', options);
                 // Call if the WeemoDriver is not running on the client computer and if the browser is not WebRTC-capable
-                weemo.onWeemoDriverNotStarted = function(downloadUrl) {
+                weemo.onWeemoDriverNotStarted = function (downloadUrl) {
                     var answer = confirm('Click OK to download and install the Weemo client.');
-                    if (answer == true)
-                        window.location = downloadUrl;
+                    if (answer === true) { window.location = downloadUrl; }
                 };
-                // Get the Connection Handler callback when the JavaScript is connected to real-time client
-                weemo.onConnectionHandler = function(message, code) {
-                    if(window.console)
-                        console.log('Connection Handler : ' + message + ' ' + code);
-                    switch(message) {
-                        case 'connectedWeemoDriver':
-                            realTimeClient = 'WeemoDriver';
-                        break; 
-                        case 'connectedWebRTC':
-                            realTimeClient = 'WebRTC';
-                        break; 
-                        case 'sipOk':
-                            document.getElementById('connecting').style.color = '#CCCCCC';
-                            document.getElementById('stat').innerHTML = 'Connected as Caller using '+realTimeClient;
-                            document.getElementById('buttonCall').style.display = 'block';
+                // Get the Connection Handler callback when the JavaScript is connected to the real-time client
+                weemo.onConnectionHandler = function (message, code) {
+                    if (window.console) { console.log('Connection Handler : ' + message + ' ' + code); }
+                    switch (message) {
+                    case 'connectedWeemoDriver':
+                        realTimeClient = 'WeemoDriver';
                         break;
-                        case 'loggedasotheruser':
+                    case 'connectedWebRTC':
+                        realTimeClient = 'WebRTC';
+                        break;
+                    case 'sipOk':
+                        document.getElementById('connecting').style.color = '#CCCCCC';
+                        document.getElementById('stat').innerHTML = 'Connected as Caller using ' + realTimeClient;
+                        document.getElementById('buttonCall').style.display = 'block';
+                        break;
+                    case 'loggedasotheruser':
                         // force connection, kick other logged users
-                            weemo.authenticate(1);
+                        weemo.authenticate(1);
                         break;
                     }
                 };
                 // This function permits to catch events comming from the call
-                weemo.onCallHandler = function(callObj, args) {
+                weemo.onCallHandler = function (callObj, args) {
                     if (args.type === 'call' && args.status === 'callCreated') {
                         document.getElementById('call').innerHTML = 'Calling...';
                     } else if (args.type === 'call' && args.status === 'active') {
                         document.getElementById('call').innerHTML = 'Call active';
                     } else if (args.type === 'call' && args.status === 'terminated') {
                         document.getElementById('call').innerHTML = '';
-                    } else if(args.type === 'webRTCcall' && args.status === 'callCreated') {
-                        document.getElementById('call').innerHTML = 'Calling...';            
-                    } else if(args.type === 'webRTCcall' && args.status === 'active') {
+                    } else if (args.type === 'webRTCcall' && args.status === 'callCreated') {
+                        document.getElementById('call').innerHTML = 'Calling...';
+                    } else if (args.type === 'webRTCcall' && args.status === 'active') {
                         document.getElementById('call').innerHTML = 'Call active';
                     } else if (args.type === 'webRTCcall' && args.status === 'terminated') {
                         document.getElementById('call').innerHTML = '';
@@ -82,44 +102,52 @@
                 var xhr;
                 if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
                     xhr = new XMLHttpRequest();
-                }
-                else { // code for IE6, IE5
+                } else { // code for IE6, IE5
                     xhr = new ActiveXObject('Microsoft.XMLHTTP');
                 }
-                
                 xhr.onreadystatechange = function () {
+                    var response = xhr.responseText,
+                        responseJson,
+                        token;
                     if (xhr.readyState === 4 && xhr.status === 200) {
-                        var response = xhr.responseText,
-                            responseJson = JSON.parse(response),
+                        response = xhr.responseText;
+                        try {
+                            responseJson = JSON.parse(response);
+                        } catch (e) {
+                            document.getElementById('error-content').innerHTML = e.message + '<br />' + e.stack + '<br />Response: ' + response;
+                            document.getElementById('error').style.display = 'block';
+                        }
+                        if (responseJson.error) {
+                            document.getElementById('error-content').innerHTML = 'error code:' + responseJson.error + '<br />Description:' + responseJson.error_description;
+                            document.getElementById('error').style.display = 'block';
+                        } else {
                             token = responseJson.token;
-                        initializeWeemo(token);
+                            initializeWeemo(token);
+                        }
+                    } else if (xhr.readyState === 4 && xhr.status !== 200) {
+                        response = xhr.responseText;
+                        console.log(response);
+                        document.getElementById('error-content').innerHTML = response;
+                        document.getElementById('error').style.display = 'block';
                     }
-                }
+                };
                 xhr.open('GET', AUTH_URL + uid, true);
                 xhr.send();
             },
             init = function () {
                 getToken(UID_USER);
             },
-            // Define the optional parameters
-            options = {
-                debugLevel : 1, 
-                displayName : 'Caller',
-                defaultStyle: true,
-                legacy: false,
-                container : 'video-container'
-            },
             createCall = function () {
                 weemo.createCall('callee_uid', 'internal', 'Callee');
-            }, 
+            },
             // Test if browser is IE10
             isIE10 = false,
             // Poll for jQuery to come into existence
-            checkReady = function(callback) {
+            checkReady = function (callback) {
                 if (window.jQuery) {
                     callback();
                 } else {
-                    window.setTimeout(function() { checkReady(callback); }, 100);
+                    window.setTimeout(function () { checkReady(callback); }, 100);
                 }
             };
 
@@ -131,7 +159,7 @@
 
         if (isIE10) {
             options.useJquery = true;
-            var script = document.createElement('SCRIPT');
+            script = document.createElement('SCRIPT');
             script.src = 'http://code.jquery.com/jquery-latest.min.js';
             script.type = 'text/javascript';
             document.getElementsByTagName('head')[0].appendChild(script);
