@@ -16,55 +16,54 @@
         var HOST_UID = 'host_uid',
             realTimeClient = '',
             weemo = {},
+            script,
             //Define the optional parameters
             options = {
-                debugLevel : 1, 
+                debugLevel : 1,
                 displayName : 'Attendee External',
                 defaultStyle: true,
-                legacy: false,
+                legacy: false
             },
             //Intialize Weemo Function
             initializeWeemo = function () {
                 // Initialize the Main Object with App Identifier, Token, WeemoType, options
                 weemo = new Weemo('YOUR_APP_IDENTIFIER', HOST_UID, 'external', options);
                 // Call if the WeemoDriver is not running and the client computer
-                weemo.onWeemoDriverNotStarted = function(downloadUrl) {
+                weemo.onWeemoDriverNotStarted = function (downloadUrl) {
                     var answer = confirm('Click OK to download and install the Weemo client.');
-                    if (answer == true)
-                        window.location = downloadUrl;
+                    if (answer === true) { window.location = downloadUrl; }
                 };
                 // Get the Connection Handler callback when the JavaScript is connected to WeemoDriver
-                weemo.onConnectionHandler = function(message, code) {
-                    if(window.console)
-                        console.log('Connection Handler : ' + message + ' ' + code);
-                    switch(message) {
-                        case 'connectedWeemoDriver':
-                            realTimeClient = 'WeemoDriver';
-                        break; 
-                        case 'connectedWebRTC':
-                            weemo.reset();
-                            document.getElementById('stat').innerHTML = 'You are using webRTC, you will not be able to host a conference call. Please download and install the Weemo Client: <a href="'+weemo.getDownloadUrl()+'">Click here</a>';
-                        break; 
-                        case 'sipOk':
-                            document.getElementById('connecting').style.color = '#CCCCCC';
-                            document.getElementById('stat').innerHTML = 'Connected as Attendee using '+realTimeClient;
-                            document.getElementById('buttonCall').style.display = 'block';
+                weemo.onConnectionHandler = function (message, code) {
+                    if (window.console) { console.log('Connection Handler : ' + message + ' ' + code); }
+                    switch (message) {
+                    case 'connectedWeemoDriver':
+                        realTimeClient = 'WeemoDriver';
                         break;
-                        case 'loggedasotheruser':
+                    case 'connectedWebRTC':
+                        weemo.reset();
+                        document.getElementById('stat').innerHTML = 'You are using webRTC, you will not be able to host a conference call. Please download and install the Weemo Client: <a href="' + weemo.getDownloadUrl() + '">Click here</a>';
+                        break;
+                    case 'sipOk':
+                        document.getElementById('connecting').style.color = '#CCCCCC';
+                        document.getElementById('stat').innerHTML = 'Connected as Attendee using ' + realTimeClient;
+                        document.getElementById('buttonCall').style.display = 'block';
+                        break;
+                    case 'loggedasotheruser':
                         // force connection, kick other logged users
-                            weemo.authenticate(1);
+                        weemo.authenticate(1);
                         break;
                     }
                 };
                 // Call Object is created by callback, this function permits to catch events comming from the call object
-                weemo.onCallHandler = function(callObj, args) {
+                weemo.onCallHandler = function (callObj, args) {
                     if (args.type === 'call' && args.status === 'terminated') {
                         document.getElementById('call').innerHTML = '';
                     } else if (args.type === 'call' && args.status === 'proceeding') {
                         document.getElementById('call').innerHTML = 'Joining Conference call...';
                     } else if (args.type === 'call' && args.status === 'active') {
                         document.getElementById('call').innerHTML = 'Call active';
-                    } 
+                    }
                 };
                 //Initialize connection between the real-time client and the browser
                 weemo.initialize();
@@ -72,27 +71,24 @@
             joinMultiParty = function () {
                 weemo.createCall(HOST_UID, 'attendee', 'Host');
             },
-
             // Test if browser is IE10
             isIE10 = false,
             // Poll for jQuery to come into existence
-            checkReady = function(callback) {
+            checkReady = function (callback) {
                 if (window.jQuery) {
                     callback();
                 } else {
-                    window.setTimeout(function() { checkReady(callback); }, 100);
+                    window.setTimeout(function () { checkReady(callback); }, 100);
                 }
             };
-
         /*@cc_on
             if (/^10/.test(@_jscript_version)) {
                 isIE10 = true;
             }
         @*/
-
         if (isIE10) {
             options.useJquery = true;
-            var script = document.createElement('SCRIPT');
+            script = document.createElement('SCRIPT');
             script.src = 'http://code.jquery.com/jquery-latest.min.js';
             script.type = 'text/javascript';
             document.getElementsByTagName('head')[0].appendChild(script);
@@ -100,7 +96,7 @@
             checkReady(initializeWeemo);
         } else {
             options.useJquery = false;
-            initializeWeemo(); 
+            initializeWeemo();
         }
     </script>
     <h3>Welcome to Weemo HelloWorld App</h3>
