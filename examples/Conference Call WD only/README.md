@@ -33,16 +33,25 @@ var weemo = new Weemo("YOUR_APP_IDENTIFIER", token, "internal", options);
 ##### Setting up the authentication url
 
 Once your AppId is setup, you will have to setup your authentication url.
-To do so, for each of the Javascript examples you want to use, you must edit the .html file and replace the placeholder "YOUR_AUTH_URL" by your authentication server url in the following lines:
+To do so, for each of the Javascript examples you want to use, you must edit the .html file. First uncomment the line that apply to you (it will depend of which server SDK you will be using) and replace the placeholder "YOUR_AUTH_URL" by your authentication server url in the following lines:
 
 ```JavaScript
-AUTH_URL = 'http://YOUR_AUTH_URL/gettoken?uid='
+// If you are using our Java, Ruby or Node.js server-SDK uncomment the following line and replace the placeholder YOUR_AUTH_URL wuth your authentication client url
+// AUTH_URL = 'http://YOUR_AUTH_URL/gettoken?uid=',
+// If you are using our PHP server-SDK uncomment the following line and replace the placeholder YOUR_AUTH_URL wuth your authentication client url
+// AUTH_URL = 'http://YOUR_AUTH_URL/gettoken.php?uid=',
 ```
 
-So for example, if you are running an authentication localy on your computer and that this authentication server is running on port 8000, you will need to replace the placeholder "YOUR_AUTH_URL" by your authentication server url as follows:
+So for example, if you are running our Java, Ruby or Node.js authentication client localy on your computer and that this authentication client is running on port 8000, you will need to replace the placeholder "YOUR_AUTH_URL" by your authentication server url as follows:
 
 ```JavaScript
 AUTH_URL = 'http://localhost:8000/gettoken?uid='
+```
+
+But if you are running our PHP authentication client localy on your computer and that this authentication client is running on port 8000, you will need to replace the placeholder "YOUR_AUTH_URL" by your authentication server url as follows:
+
+```JavaScript
+AUTH_URL = 'http://localhost:8000/gettoken.php?uid='
 ```
 
 Now that you have setup the AppId and the authentication server url you can upload the examples on a webserver and start using them.
