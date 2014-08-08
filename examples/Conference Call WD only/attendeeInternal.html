@@ -30,7 +30,10 @@
         // Here is the definition of the uid used by this user and the authentication url used in order to get a token
         var HOST_UID = 'host_uid',
             ATTENDEE_UID = 'attendee_internal_uid',
-            AUTH_URL = 'http://YOUR_AUTH_URL/gettoken?uid=',
+            // If you are using our Java, Ruby or Node.js server-SDK uncomment the following line and replace the placeholder YOUR_AUTH_URL wuth your authentication client url
+            // AUTH_URL = 'http://YOUR_AUTH_URL/gettoken?uid=',
+            // If you are using our PHP server-SDK uncomment the following line and replace the placeholder YOUR_AUTH_URL wuth your authentication client url
+            // AUTH_URL = 'http://YOUR_AUTH_URL/gettoken.php?uid=',
             realTimeClient = '',
             weemo = {},
             script,
